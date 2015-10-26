@@ -1,0 +1,78 @@
+[ 
+{  	"description": "Replace curly single quotes (and trailing space) with single quote.",
+	"pattern": ["‘", "’", " ’", " ’"], 
+	"replacement": "'" 
+	},
+{ 	"description": "Replace curly double quotes with straight quotes.",
+	"pattern": ["“", "”"], 
+	"replacement": "\"" 
+	},
+{ 	"description": "Replace miscellaneous dashes with hyphen.",
+	"pattern": ["–","—","­","¬"], 
+	"replacement": "-" 
+	},
+{ 	"description": "Replace elipses character with three periods.",
+	"pattern": ["…"], 
+	"replacement": "..." 
+	},
+{ 	"description": "Replace © with (c).",
+	"pattern": ["©"], 
+	"replacement": "(c)" 
+	},
+{ 	"description": "Write out 3/4 fraction.",
+	"pattern": ["¾"], 
+	"replacement": "3/4" 
+	},
+{ 	"description": "Write out 1/2 fraction.",
+	"pattern": ["½"], 
+	"replacement": "1/2" 
+	},
+{ 	"description": "Write out 1/4 fraction.",
+	"pattern": ["¼"], 
+	"replacement": "1/4" 
+	},
+{ 	"description": "Replace degree symbol with text.",
+	"pattern": ["°"], 
+	"replacement": " degrees" 
+	},
+{ 	"description": "",
+	"pattern": ["æ","ä","à","á","å","â","ã"], 
+	"replacement": "a" 
+	},
+{ 	"description": "Replace Eszett with double s.",
+	"pattern": ["ß"], 
+	"replacement": "ss" 
+	},
+{ 	"description": "Replace c-cedilla with c.",
+	"pattern": ["ç"], 
+	"replacement": "c" 
+	},
+{ 	"description": "Replace various accented e-chars with e.",
+	"pattern": ["é","è","ë","ê"], 
+	"replacement": "e" 
+	},
+{ 	"description": "Replace various accented i-chars with .",
+	"pattern": ["í","î"], 
+	"replacement": "i" 
+	},
+{ 	"description": "Replace n-tilde with n.",
+	"pattern": ["ñ"], 
+	"replacement": "n" 
+	},
+{ 	"description": "Replace various accented o-chars with o.",
+	"pattern": ["ö","ó","ò","œ"], 
+	"replacement": "o" 
+	},
+{ 	"description": "Replace various accented u-chars with u.",
+	"pattern": ["ü","ú"], 
+	"replacement": "u" 
+	},
+{ 	"description": "Replace medial dot with space.",
+	"pattern": ["·"], 
+	"replacement": " " 
+	},
+{ 	"description": "Replace pound symbol with text.",
+	"pattern": ["£","¥£"], 
+	"replacement": "pounds" 
+	}
+]
