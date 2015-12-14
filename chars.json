@@ -35,7 +35,7 @@
 	"pattern": ["°"], 
 	"replacement": " degrees" 
 	},
-{ 	"description": "",
+{ 	"description": "Replace various accented a-chars with a.",
 	"pattern": ["æ","ä","à","á","å","â","ã"], 
 	"replacement": "a" 
 	},
