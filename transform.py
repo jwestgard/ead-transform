@@ -50,17 +50,10 @@ def transform(files):
         # get ead file
         ead = load_ead_file(filepath)
         # apply regexes one by one to file
-<<<<<<< Updated upstream
         for t in tf:
             print(t["description"])
             for p in t["patterns"]:
                 result = replace(p, t["replacement"], ead)
-=======
-        for tr in transformations:
-            print("\t* {0}".format(tr["description"]))
-            for p in tr["pattern"]:
-                result = replace(p, tr["replacement"], ead)
->>>>>>> Stashed changes
         # store output file
         save_ead_file(filename, output_dir, result)
 
