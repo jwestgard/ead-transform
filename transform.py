@@ -6,12 +6,14 @@ import re
 import lxml
 import json
 import argparse
+import codecs
 
 # parse command line arguments
 def get_arguments():
     parser = argparse.ArgumentParser(description='Process and validate EAD.')
     parser.add_argument('-i', '--infile')
     parser.add_argument('-o', '--outfile')
+    parser.add_argument('-t', '--transform')
     parser.add_argument('-x', action="store_true")
     return parser.parse_args()
 
@@ -22,44 +24,25 @@ def load_transformations(transform_file):
 
 # get list of EAD files
 def get_files(root):
-    return [os.path.join(root, f) for f in os.listdir(root) if not f.startswith('.') and \
-        os.path.isfile(os.path.join(root, f))]
+    return [os.path.join(root, f) for f in os.listdir(root) if not f.startswith(
+        '.') and os.path.isfile(os.path.join(root, f))]
     
-# load EAD file
-def load_ead_file(filepath):
-    with open(filepath, "rb") as f:
-        return f.read().decode('utf8', 'ignore')
-
-# write EAD output to new file
-def save_ead_file(filename, output_dir, result):
-    outfile = os.path.join(output_dir, filename)
-    with open(outfile, 'w') as f:
-        f.write(result)
-
 # apply the regexes to the input file
 def replace(match, replacement, text):
     return re.sub(match, replacement, text)
 
-# apply transformations to a set of files
-def transform(files):
-    tf = load_transformations(transform_file)
-    files_to_process = get_files(input_dir)
-    for filepath in files_to_process:
-        filename = os.path.basename(filepath)
-        print("Loading EAD file: {0}...".format(filename))
-        # get ead file
-        ead = load_ead_file(filepath)
-        # apply regexes one by one to file
-        for t in tf:
-            print(t["description"])
-            for p in t["patterns"]:
-                result = replace(p, t["replacement"], ead)
-        # store output file
-        save_ead_file(filename, output_dir, result)
-
 def main():
     args = get_arguments()
-    print(args.infile)
+    files_to_process = get_files(args.infile)
+    transformations = load_transformations(args.transform)
+    for n, f in enumerate(files_to_process):
+        print("{0}. Processing EAD file: {1}".format(n+1,f))
+        base = os.path.basename(f)
+        outfile = os.path.join(args.outfile, base)
+        rc = codecs.open(f, mode='r', encoding='windows-1252', errors='strict')
+        with open(outfile, 'w') as of:
+            of.write(rc.read())
+        
 
 if __name__ == '__main__':
     main()
