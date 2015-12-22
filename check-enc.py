@@ -23,10 +23,10 @@ for n, f in enumerate(args.files):
         bytes = codecs.open(f, mode='r', encoding=encoding, errors='strict')
         try:
             bytes.read()
-#            print('  - {0} OK.'.format(encoding))
+            print('  - {0} OK.'.format(encoding))
             item_report.update({encoding: 'OK'})
         except UnicodeDecodeError:
-#            print('  - {0} Error!'.format(encoding))
+            print('  - {0} Error!'.format(encoding))
             item_report.update({encoding: 'error'})
     results.append(item_report)
     
