@@ -1,0 +1,4118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ead relatedencoding="MARC21">
+<eadheader audience="internal" countryencoding="iso3166-1" dateencoding="iso8601" langencoding="iso639-2b" findaidstatus="edited-full-draft"><eadid countrycode="iso3611-1" mainagencycode="MdU">MdU.ead.hbkspec.0036U.ead.histms.0362</eadid> 
+<filedesc> 
+<titlestmt> 
+<titleproper>Guide to the United Brotherhood of Carpenters and Joiners of America (UBCJA), Local 132 Archives</titleproper> 
+<author>Processed by Kate Aras, November 2011.</author>
+<sponsor>Sponsored by a gift from Local 132</sponsor>
+</titlestmt>
+<publicationstmt>
+<publisher></publisher>
+<address><addressline>Special Collections, University of Maryland Libraries, Hornbake Library, College Park, MD 20742.  Tel: 301-405-9212, Fax: 301-314-2709, Email: askhornbake@umd.edu
+</addressline></address>
+<date>2011-11-01</date>
+<p>&#169;University of Maryland Libraries. All Rights Reserved.</p>
+</publicationstmt>
+</filedesc>
+<profiledesc>
+<creation>EAD markup created using EAD database in Microsoft Access. Markup completed by Kate Aras, November 30, 2011.<date>2011-11-01</date>
+</creation>
+<langusage>Finding aid written in <language langcode="eng">English</language></langusage></profiledesc>
+<revisiondesc>
+<change><date>2012-01-11</date><item>EAD markup checked and verified by Joanne Archer, January 11, 2012</item></change>
+</revisiondesc>
+</eadheader><archdesc level="collection" type="combined">
+<did id="did_1911886687">
+<head>Brief Description of the Collection</head>
+<repository label="Repository"><corpname encodinganalog="852$a">State of Maryland and Historical Collections</corpname><address><addressline>Special Collections, University of Maryland Libraries, Hornbake Library, College Park, MD 20742.  Tel: 301-405-9212, Fax: 301-314-2709, Email: askhornbake@umd.edu</addressline></address></repository>
+<origination label="Papers/Records Created By"><corpname encodinganalog="110">United Brotherhood of Carpenters and Joiners of America (UBCJA), Local 132</corpname></origination>
+<unittitle label="Title of the Collection" encodinganalog="245$a">United Brotherhood of Carpenters and Joiners of America (UBCJA), Local 132 archives</unittitle>
+<unitdate type="inclusive" label="Dates of the Collection" encodinganalog="245$f">1900-2007</unitdate><unitdate type="bulk" label="Bulk Dates" encodinganalog="245$g">1925-2004</unitdate><physdesc label="Size of the Collection" encodinganalog="300$a">27.50 linear feet and 5 items</physdesc><unitid countrycode="us" encodinganalog="099">2012-14</unitid>
+<physloc audience="internal">Boxes 1-52 and Box 55:P:18:A:22
+a - P 18 : A : 30 e</physloc>
+<physloc audience="internal">Box 53 (Framed Photograph):P:36:F:9
+</physloc>
+<physloc audience="internal">Box 54 (Framed Resolution):RM:2210:A:</physloc>
+<abstract label="Short Description of Collection" encodinganalog="520$a">Local Union 132 of the United Brotherhood of Carpenters and Joiners of America (UBCJA) is the predominant local carpenters union in the Washington, D.C., metropolitan area. The consolidation of four local unions located in Washington, D.C.,--884, 190, 1651, and 1103--formed Local 132. The new union received its charter on October 25, 1905. Originally, Local 132 had its headquarters in downtown Washington, D.C., and met every Friday at the Typographical Temple. Members of Local 132 broke ground on a Carpenter's Hall in 1926. This building served as a home for the local union until 1981, when Local 132 moved its headquarters from downtown Washington, D.C., to Suitland, Maryland. Shortly thereafter, Local 132 moved to Forestville, Maryland. In 2008, the union again moved its offices to its present location in Upper Marlboro where it shares the building with the Mid-Atlantic Regional Council of Carpenters (MARCC), the regional council associated with the UBCJA. Local 132 is one of 27 local unions affiliated with MARCC. The archives of Local 132 primarily consist of general administrative files, including meeting minutes and correspondence, as well as membership files that mainly consist of applications. Other items in the collection include financial records, publications, contractor files, memorabilia, and photographs. Among the topics addressed are building projects, equality for all unionized workers, and the national union.</abstract>
+<abstract type="labor">Local Union 132 of the United Brotherhood of Carpenters and Joiners of America (UBCJA) is the predominant local carpenters union in the Washington, D.C., metropolitan area. The consolidation of four local unions located in Washington, D.C.,--884, 190, 1651, and 1103--formed Local 132. The new union received its charter on October 25, 1905. Originally, Local 132 had its headquarters in downtown Washington, D.C., and the local held its meetings every Friday at the Typographical Temple. Members of Local 132 broke ground on a Carpenter's Hall in 1926. This building served as a home for the local union until 1981, when Local 132 moved its headquarters from downtown Washington, D.C., to Suitland, Maryland. Shortly thereafter, Local 132 moved to Forestville, Maryland. In 2008, the union again moved its offices to its present location in Upper Marlboro where it shares the building with the Mid-Atlantic Regional Council of Carpenters (MARCC), the regional council associated with the UBCJA. Local 132 is one of 27 local unions affiliated with MARCC. The archives of Local 132 primarily consist of general administrative files, including meeting minutes and correspondence, as well as membership files that mainly consist of applications. Other items in the collection include financial records, publications, contractor files, memorabilia, and photographs. Among the topics addressed are building projects, equality for all unionized workers, and the national union.</abstract>
+<abstract type="geogwash">Local Union 132 of the United Brotherhood of Carpenters and Joiners of America (UBCJA) is the predominant local carpenters union in the Washington, D.C., metropolitan area. The consolidation of four local unions located in Washington, D.C.,--884, 190, 1651, and 1103--formed Local 132. The new union received its charter on October 25, 1905. Originally, Local 132 had its headquarters in downtown Washington, D.C., and the local held its meetings every Friday at the Typographical Temple. Members of Local 132 broke ground on a Carpenter's Hall in 1926. This building served as a home for the local union until 1981, when Local 132 moved its headquarters from downtown Washington, D.C., to Suitland, Maryland. Shortly thereafter, Local 132 moved to Forestville, Maryland. In 2008, the union again moved its offices to its present location in Upper Marlboro where it shares the building with the Mid-Atlantic Regional Council of Carpenters (MARCC), the regional council associated with the UBCJA. Local 132 is one of 27 local unions affiliated with MARCC. The archives of Local 132 primarily consist of general administrative files, including meeting minutes and correspondence, as well as membership files that mainly consist of applications. Other items in the collection include financial records, publications, contractor files, memorabilia, and photographs. Among the topics addressed are building projects, equality for all unionized workers, and the national union.</abstract>
+</did>
+<descgrp id="des_1550487819">
+<head>Important Information for Users of the Collection</head><accessrestrict encodinganalog="506">
+<head>Use and Access to Collection</head><p>Some files are restricted. Refer to individual folder headings for more information. Union officers and members may be granted access to restricted materials with official approval from Local 132.</p>
+</accessrestrict>
+<acqinfo audience ="external" encodinganalog="541">
+<head>Custodial History and Acquisition Information</head>
+<p>The archives of UBCJA Local 132 were donated to the University of Maryland, College Park Libraries on July 1, 2011, by Financial Secretary/Treasurer and Delegate Henrick E. Sorenson and the members of Local 132.</p></acqinfo>
+<prefercite encodinganalog="524">
+<head>Preferred Citation</head>
+<p>United Brotherhood of Carpenters and Joiners of America (UBCJA), Local 132 archives, Special Collections, University of Maryland Libraries.</p>
+</prefercite>
+<processinfo encodinganalog="583">
+<p>When received, the records were in twelve large file boxes. The files inside individual boxes had some discernable groupings. Thus, the overall order of the processed collection was established by the processor to highlight what was perceived to be important to the union and also to reflect these original groupings.</p>
+<p>During the processing of the collection, it was discovered that Local 132 had instituted two different filing systems over the years. Before 1998, the files were arranged by subject. Thus, the administrative, financial, and membership files were separated from each other. This system is reflected in the overall series structure of the collection.  However, in 1998, the union changed this filing system and combined administrative, financial, and membership files into a chronological arrangement. This system exists in the collection in Series 1, Subseries 3: General Administrative Files. These files were housed in hanging file folders. The hanging file folders were discarded and the records have been re-foldered into acid-free folders. The contractor files in Series 4 were not part of the new filing system and were separate from other files. Thus, they were given their own series during the processing of the collection.</p>
+<p>The meeting minutes of Local 132 dating from 1904 to 1928 were in bound volumes, while the minutes from 1928 to 1994 were bound with metal clasps. These clasps were removed, and the records were placed in acid-free folders. All meeting minutes were then filed together chronologically in Series 1, Subseries 1: Minutes.</p>
+<p>Some of the large file boxes contained several smaller rectangular boxes which held membership applications. These membership applications were ordered chronologically, and this order has been maintained in Series II: Membership Files. All applications contain personal information, and those applications from 1936 to the present have been restricted due to privacy concerns.</p>
+<p>All files in the collection have been placed in acid-free boxes. Oversize materials were separated from the collection and housed in a map case. Photographs and memorabilia were separated and placed in acid-free photo boxes.</p>
+<p>While processing the collection, the processor discovered that several of the folders contained personal and confidential information about Local 132 members, the union itself, and the institutions with which the local had contact. Thus, many folders remain restricted indefinitely due to privacy and confidentiality concerns.</p></processinfo>
+<userestrict encodinganalog="540">
+<head>Duplication and Copyright Information</head>
+<p>Photocopies of original materials may be provided for a fee and at the discretion of the curator. Please see our <extref href="http://www.lib.umd.edu/ARCV/arcvmss/policiesandforms/duplication.html">Duplication of Materials</extref> policy for more information. Queries regarding publication rights and copyright status of materials within this collection should be directed to the appropriate curator</p>
+</userestrict>
+</descgrp>
+<bioghist id="bio_1131662336" encodinganalog="545"><head>Administrative History</head><p>The United Brotherhood of Carpenters and Joiners of America is one of the oldest organized labor unions in the United States. Formed in 1881 in Washington, D.C., it was first called the Brotherhood of Carpenters and Joiners of America and later took on its current name in 1916. Local 132 received its charter on October 25, 1905, after a consolidation of four local unions: 884, 190, 1651, and 1103. One of these unions, Local 190, was the first local union of the national organization. Consolidation of the unions took place on October 27, 1905, at Pythian Temple in Washington, D.C.</p>
+<p>The first officers of Local 132 were installed in office on January 5, 1906. Jacob Nussbaum was the first president of the newly consolidated union and had been the president of Local 884 before the consolidation. John Chift held the position of vice president, while E.B. Burns was the first recording secretary. M. J. Deery was the financial secretary, and G. Francis Davis served as treasurer. B.C. Stine was the first sonductor, and J. J. Deery held the position of warden. W. G. Phillips and Frank Gardener were trustee and auditor, respectively, for an eighteen-month period.</p>
+<p>Meetings were held every Friday at the Typographical Temple in Washington, D.C. In 1926, the union members broke ground on the Carpenter’s Hall, an eight-story building that they would call home until moving to Maryland in 1981. The district council for the Washington, D.C., area shared this building with Local 132.</p>
+<p>During 105 years as a local carpenters union of the UBCJA, Local 132 has shaped the early careers of several important general executive board members of the national union. Gabriel Edmonston, the first president of the UBCJA, was a member of Local 190. To honor him, members of Local 132 erected a bronze tablet in the lobby of the General Headquarters in 1920. He then joined Local 132 when the four unions consolidated. Santiago Iglesias Pantin, the leading organizer of labor unions and worker relief in Puerto Rico, was a member of Local 132 at his death in 1939. Anthony Gianquanta, a delegate to the district council in the 1970s, was instrumental in the continued growth of Local 132. He became president in 1985, a position he held until 2003 when the current Local 132 President, H. Pierre Desperes, was elected to the position.</p>
+<p>With the consolidation, Local 132 became the major carpenters union located in the Washington, D.C., area and has continued to be a prominent labor union in the region. There was another consolidation on October 27, 1925, when Local 1103 became part of Local 132. Local 132 is part of the Mid-Atlantic Regional Council of Carpenters (MARCC), the regional council that serves Maryland, D.C., and Virginia local unions of the UBCJA. Today, Local 132 has over 1,400 trained and qualified carpenters, both male and female. The current President is H. Pierre Desperes, and the General Executive Board includes Vice President Belmont Thompson and Recording Secretary Benjamin G. Glenn, among others.</p>
+<p>Over the years, members of Local 132 have contributed to several major construction projects, including projects that have had a major impact on the D.C./Maryland area. For example, they helped to build the region's public transportation system, the Metro, in the 1960s and 1970s. In 1986, members of Local 132 helped create an exhibit at the National Gallery of Art. They constructed an area in the museum to show <emph render="italic">The Treasure Houses of Britain: Five Hundred Years of Private Patronage and Art Collecting.</emph> At the time, the members worked to create an exhibit that imitated English country houses from the fifteenth through twentieth centuries. </p>
+<p>According to the Local 132 website, this local union of the UBCJA continues to work toward bettering social and intellectual conditions of all working men and women. Members of Local 132 frequently assist MARCC in rallies to improve working conditions for union members in the region. Apprenticeship training is very important to the UBCJA, and MARCC provides members of all local unions under its jurisdiction, including Local 132, with free training so they can become proficient in all aspects of the profession.</p></bioghist>
+<scopecontent id="sc_1697181853" encodinganalog="520">
+<head>Scope and Content of Collection</head>
+<p>The archives of Local 132 range in date from 1900 to 2007, with the bulk of the materials dating between 1925 and 2004.  Materials primarily consist of general administrative files, including meeting minutes that date from 1905 to 2004. The membership files mainly consist of applications and range in date from 1910 to 2002. Other items in the collection include financial records, publications, contractor files, memorabilia, and photographs. Among the topics addressed are building projects, equality for all unionized workers, and the national union.</p></scopecontent>
+<arrangement id="arr_518426068" encodinganalog="351">
+<p>The United Brotherhood of Carpenters and Joiners of America (UBCJA), Local 132 archives has been divided into six series</p>
+<list>
+<item>Series 1: Administrative Files</item>
+<item>Series 2: Membership Files</item>
+<item>Series 3: Publications</item>
+<item>Series 4: Contractor Files</item>
+<item>Series 5: Photographs</item>
+<item>Series 6: Memorabilia</item>
+</list>
+</arrangement>
+<relatedmaterial id="rm_2125970366" encodinganalog="544">
+<head>Related Material</head>
+<p>The University of Maryland, College Park Libraries Special Collections also holds the <archref href="http://hdl.handle.net/1903.1/1393">United Brotherhood of Carpenters and Joiners of America (UBCJA) archives.</archref> While the UBJCA archives primarily consists of documents and other materials related to the functioning of the national union this collection also has information about Local 132 as well as many other local unions.</p><p>For other related archival and manuscript collections, please see the following <archref xpointer="rguide">subject guides</archref>.</p>
+</relatedmaterial>
+<controlaccess id="ca_2016050965"><head>Selected Search Terms</head>
+<p>This collection is indexed under the following headings in the University of Maryland Libraries' <extref href="http://catalog.umd.edu/">Catalog</extref>. Researchers desiring related materials about these topics, names, or places may search the Catalog using these headings.</p><controlaccess><head>Subjects</head><corpname role="subject" encodinganalog="610">United Brotherhood of Carpenters and Joiners of America -- Archives.</corpname><subject encodinganalog="650">Carpenters -- Labor unions -- Archives.</subject></controlaccess>
+</controlaccess>
+<dsc type="analyticover" id="dsc_1830173124">
+<head>Contents of Collection</head><c01 level="series" id="series1.a"><did><unittitle>Administrative Files</unittitle><unitdate>1903-2004 and undated</unitdate><physdesc>12.50 linear feet</physdesc></did>
+<scopecontent><p>Series I consists of an array of administrative files that were crucial to the establishment and continued growth of Local 132. The documents in this series pertain to the day-to-day concerns of Local 132 and its connection to the national union as well as union-affiliated organizations in the region. Important figures in this series are the presidents of the national union, such as first president Gabriel Edmonston, and the presidents of Local 132, such as Anthony Gianquanta. The documents are divided into four subseries: Minutes, Correspondence, General Administrative Files, and Financial Records. However, these subseries can contain overlapping information and file types.  With the implementation of a new filing system in 1998, files that were previously organized by subject were placed together and filed chronologically. Thus, minutes, correspondence and financial files can be found in the General Administrative subseries. Moreover, the correspondence subseries includes some financial information. Some files are restricted due to privacy concerns. </p></scopecontent>
+<c02 level='subseries' id='subseries1.1.a'><did><unittitle>Minutes</unittitle>
+<unitdate>1903-1994</unitdate>
+<physdesc>4.0 linear feet</physdesc>
+</did>
+<scopecontent>
+<p>Subseries 1 consists of the minutes of Local 132. The minutes appear first because they are the oldest records of Local 132 and its predecessors, and they shed light on the monthly dealings of this local carpenters union. The minutes document finances, membership, interactions with the national union, elections, and many other clerical issues that were agreed upon during Executive Board meetings. The oldest minutes from Local 132 date from 1905; however, the minutes from the Local 884 and Local 190 range from 1903 to 1905. Local unions 884 and 190 were two of the unions who consolidated in 1905 to create Local 132. Minutes from 1903 to 1928 are in bound volumes. The collection does not contain the minutes from 1918 and 1933-1937.</p>
+<p>Arrangement is chronological.</p></scopecontent>
+</c02>
+<c02 level='subseries' id='subseries1.2.a'><did><unittitle>Correspondence</unittitle>
+<unitdate>1925-1977</unitdate>
+<physdesc>1.25 linear feet</physdesc>
+</did>
+<scopecontent>
+<p>Subseries 2 contains all of the correspondence of Local 132 from 1925 to 1977. The union titled these folders "correspondence," but these folders contain much more than correspondence. The earliest materials have treasurer's and secretary's reports from each month of the respective year. The more recent files, while still consisting of reports from the treasurer and secretary, also have correspondence from the national union in the form of circular letters and other general mailings sent to all local unions. The subseries also includes files regarding pension plans for specific members, elections for the local union, and general mailings from organizations who had dealings with the local union. Examples of these organizations are the Greater Washington Central Labor Council, the National Joint Carpentry Apprenticeship and Training Committee, and the Washington Building and Construction Trades Council. The files containing personal information are currently restricted due to privacy concerns. </p>
+<p>Arrangement is chronological.</p></scopecontent>
+</c02>
+<c02 level='subseries' id='subseries1.3.a'><did><unittitle>General Administrative Files</unittitle>
+<unitdate>1936-2004 and undated</unitdate>
+<physdesc>6.75 linear feet</physdesc>
+</did>
+<scopecontent>
+<p>Subseries 3 consist of general administrative files. While the date range is expansive, the bulk of materials are from 1998 to 2004. The majority of this series is comprised of those files that were a part of the new filing system implemented in 1998. It includes correspondence with the local union, union members, and organizations associated with the union. It also contains membership files regarding apprenticeship, change of status, dues, and long-term members receiving their pins. Moreover, there are financial files in this series. These include, but are not limited to, the budget of the union, the union's dealings with auditors and accountants, and the union's holdings in the stock market. Many of these files are currently restricted because of privacy concerns. </p>
+<p>Pre-1998 files are placed first in this series and are arranged alphabetically and then chronologically. Post-1998 files are placed next and are arranged alphabetically and then chronologically.</p></scopecontent>
+</c02>
+<c02 level='subseries' id='subseries1.4.a'><did><unittitle>Financial Files</unittitle>
+<unitdate>1956-1989</unitdate>
+<physdesc>0.50 linear feet</physdesc>
+</did>
+<scopecontent>
+<p>Subseries 4 consists of the financial records of the local union. Since all the files are pre-1998, they are not part of the new filing system instituted in 1998 and are thus not a part of Series I, Subseries 2. The series consists of accounts receivable books, files from the accountant of the local union, Bailey and Bailey, contingent fund books, an expenditure book, an executive board book, a petty cash record book and files regarding the welfare fund. The bulk of the folders consist of the contingent fund books. The contingent fund was an account that Local 132 had for unexpected emergencies. The contingent fund files are currently restricted because of privacy concerns. </p>
+<p>Arrangement is alphabetical by subject and then chronological. </p></scopecontent>
+</c02>
+</c01>
+<c01 level="series" id="series2.a"><did><unittitle>Membership Files</unittitle><unitdate>1910-2007 and undated</unitdate><physdesc>11.50 linear feet</physdesc></did>
+<scopecontent><p>Series II consists of membership applications, change of status files, clearance cards, day books, dues, officers and trustees meeting night book, roll call books, suspended books, and miscellaneous files. The bulk of this series contains applications for membership to Local 132. These files are an important part of the collection because they give insight into who was part of the local union and when they joined. The applications give information about date and place of birth, marital status, whether or not the applicant previously worked in the trade, where they lived, the price of application, and if an applicant had been a part of the union before. From 1949 to 1974, the union required applicants to divulge communist party membership on their local union applications. </p>
+<p>Membership applications date from 1910 to 2000. Within the folders, the local chose to file the bulk of the applications chronologically by month instead of alphabetically by last name. Thus, it will prove challenging to find an application if one does not know the date or a date range when an individual member applied for membership into the union. However, applications from 1998 to 2004 are arranged alphabetically within each folder and can be searched easily by last name.</p>
+<p>This series also includes change of status files from 1979 to 1989 and dues files from 2001 to 2007. The change of status files look much like the applications as the members of the union had to request a change of status for several reasons. These reasons include:  achieving the rank of Journeyman, retiring, or changing the benefit schedule. Members could retire when they were part of the union for thirty years or when they turned 65, whichever came first. The dues files from 2001 to 2007 show what the members paid between those years. Another portion of the series contains books of suspended members in 1994. Most of the series is currently restricted due to the presence of social security numbers and other personal privacy concerns </p>
+<p>Arrangement is alphabetical by subject and then chronological. Exceptions are noted in the above series description.</p></scopecontent>
+</c01>
+<c01 level="series" id="series3.a"><did><unittitle>Publications</unittitle><unitdate>1912-1998</unitdate><physdesc>0.25 linear feet</physdesc></did>
+<scopecontent><p>Series III contains publications that the local union produced as well as received from other outlets. <title render="italic">"The Builders"</title> was a publication Local 132 received directly from the AFL-CIO from 1997-1998. <title render="italic">Carpenter's News</title> was a publication sent out by the Carpenters' District Council located in Washington, D.C. In one folder, there is <title render="italic">Sawing Through</title>, a publication produced and circulated by the members of Local 132, from 1973 to 1982. The two main editors of the newsletter during this period were Jim Merkle and Bob Gardner. The other publications in this series are those the local union received between 1912 and 1998. </p>
+<p>Arrangement is alphabetical by subject and then chronological.</p></scopecontent>
+</c01>
+<c01 level="series" id="series4.a"><did><unittitle>Contractor Files</unittitle><unitdate>1977-1999 and undated</unitdate><physdesc>1.75 linear feet</physdesc></did>
+<scopecontent><p>Series IV consists of contractor files. These contractor files are records about the relationships and agreements that the local union had with contractors in the Washington, D.C., metropolitan area. These files include complaints about unfair practices against union members by contractors as well as charges against union members for breaching contracts. Files also include collective bargaining agreements with the contractors as well as payouts when certain businesses went bankrupt. Folders that contain personal and confidential legal information have been restricted. </p>
+<p>The folders are arranged alphabetically by subject and then chronologically.</p></scopecontent>
+</c01>
+<c01 level="series" id="series5.a"><did><unittitle>Photographs</unittitle><unitdate>1900 and 1998</unitdate><physdesc>1.50 linear feet and 1 item</physdesc></did>
+<scopecontent><p>Series V consists of photographs, a majority of which were taken by members of Local 132. One box of the series contains photographs that were separated from the 1998 Pins and Certificates folder in Series 1, Subseries 3. The box contains 58 images of the local union members who received their pins and certificates that year. Pins and certificates are given to recognize how many years each individual has been a member of the union. The box also includes the corresponding negatives of these photographs. Additionally, this series consists of a framed photograph of the delegates to the 1900 United Brotherhood of Carpenters and Joiners of America Convention in Scranton, Pennsylvania. The persons who can be identified who may be of interest in the photograph include Frank Duffy and several African American delegates to the convention. This photograph came from Local 110, one of the local unions that was consolidated in 1905 to form Local 132.</p></scopecontent>
+</c01>
+<c01 level="series" id="series6.a"><did><unittitle>Memorabilia</unittitle><unitdate>1950 and undated</unitdate><physdesc>4 items</physdesc></did>
+<scopecontent><p>Series VI consists of four pieces of memorabilia from Local Union 132. The first item (2468) is an undated resolution in memoriam by Local 132 regarding the deceased member Joseph K. Potter. The resolution is still in the frame and the frame is union made. The second piece (2469) is an embossing seal stamp used by the local union to make its mark on official documents. The third piece of memorabilia (2470) is a piece of Kaiser Steel. The piece of memorabilia states that it was the "first slab rolled on the 85 inch hot strip mill on February 15, 1950." The final piece of memorabilia (2558) is a gray, large T-shirt with the Carpenter's Union seal and the words "Local 132" on the front pocket and the back of the shirt.</p></scopecontent>
+</c01>
+</dsc>
+<dsc type="in-depth" id="dsc_336131725">
+
+<c01 level='series' id='series1'>
+<did>
+<unittitle>Administrative Files</unittitle>
+<unitdate>1903-2004 and undated</unitdate>
+<physdesc>12.50 linear feet</physdesc></did>
+<c02 level='subseries' id='subseries1.1'><did><unittitle>Minutes</unittitle>
+<unitdate>1903-1994</unitdate>
+<physdesc>4.0 linear feet</physdesc>
+</did>
+<c03 level='file'>
+<did>
+<container id='box1.1' type='box'>1</container>
+<container parent='box1.1' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes -- Local 884</unittitle>
+<unitdate>1903-1905</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box1.1' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Minutes -- Local 190</unittitle>
+<unitdate>1903-1905</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box1.1' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1905-1907</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box1.1' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Minutes and Notes on History</unittitle>
+<unitdate>1905-1906, 1925, 1975</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box2.2' type='box'>2</container>
+<container parent='box2.2' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1907-1909</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box2.2' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1909-1910</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box2.2' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1911-1913</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box3.3' type='box'>3</container>
+<container parent='box3.3' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1913-1915</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box3.3' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1915-1917</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box4.4' type='box'>4</container>
+<container parent='box4.4' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>January 1919-June 1928</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box5.5' type='box'>5</container>
+<container parent='box5.5' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1928-1930</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box5.5' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1931-1932</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box5.5' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1938-1940</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box5.5' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1941-1942</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box5.5' type='folder'>5.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1943-1945</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box5.5' type='folder'>6.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1946-1948</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box6.6' type='box'>6</container>
+<container parent='box6.6' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1949-1950</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box6.6' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1951-1952</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box6.6' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1953-1954</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box6.6' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1955-1956</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box6.6' type='folder'>5.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1957-1958</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box6.6' type='folder'>6.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1959-1960</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box7.7' type='box'>7</container>
+<container parent='box7.7' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1961-1962</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box7.7' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1963-1964</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box7.7' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1965-1966</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box7.7' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1967-1968</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box7.7' type='folder'>5.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1969-1970</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box7.7' type='folder'>6.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1971-1972</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box7.7' type='folder'>7.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1973-1975</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box8.8' type='box'>8</container>
+<container parent='box8.8' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1976-1977</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box8.8' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1978-1979</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box8.8' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1980-1982</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box8.8' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1983-1984</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box8.8' type='folder'>5.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1984-1989</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box8.8' type='folder'>6.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>1990-1994</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box8.8' type='folder'>7.0</container>
+<unittitle>Administrative Files -- Minutes</unittitle>
+<unitdate>June 19, 1991</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+</c02><c02 level='subseries' id='subseries1.2'><did><unittitle>Correspondence</unittitle>
+<unitdate>1925-1977</unitdate>
+<physdesc>1.25 linear feet</physdesc>
+</did>
+<c03 level='file'>
+<did>
+<container id='box9.9' type='box'>9</container>
+<container parent='box9.9' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1925, 1965-1971</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1935-1939</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1944-1947</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1948</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>5.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1950</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>6.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1951</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>7.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1952</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>8.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1953</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>9.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1954</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>10.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1955</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>11.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1957</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>12.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1958</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>13.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1959</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box9.9' type='folder'>14.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1960</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box10.10' type='box'>10</container>
+<container parent='box10.10' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1961</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1962</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1963</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1964</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>5.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1965</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>6.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1966</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>7.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1967</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>8.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1968</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>9.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>October 1, 1968</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>10.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1969</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>11.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1970</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>12.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1971</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box10.10' type='folder'>13.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1972</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box11.11' type='box'>11</container>
+<container parent='box11.11' type='folder'>1.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1973</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>2.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1974</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>3.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1975</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>4.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1976</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>5.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1977</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>6.0</container>
+<unittitle>Administrative Files -- Correspondence</unittitle>
+<unitdate>1977</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+</c02><c02 level='subseries' id='subseries1.3'><did><unittitle>General Administrative Files</unittitle>
+<unitdate>1936-2004 and undated</unitdate>
+<physdesc>6.75 linear feet</physdesc>
+</did>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Ballots</unittitle>
+<unitdate>1936-1948, 1961-1982</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Calvert Hill Nuclear Power</unittitle>
+<unitdate>undated</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Local 132 By-Laws</unittitle>
+<unitdate>1985</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Logo Work Order</unittitle>
+<unitdate>1990</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Metro Map</unittitle>
+<unitdate>March 1, 1968</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box11.11' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Miscellaneous</unittitle>
+<unitdate>undated</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box12.12' type='box'>12</container>
+<container parent='box12.12' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Pension and Retirement</unittitle>
+<unitdate>January 1973</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Room Use</unittitle>
+<unitdate>1970-1971</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Special Election</unittitle>
+<unitdate>April 3, 1974</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Trust Funds</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Apprentice Correspondence</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Graduation Dinner</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Arrears</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Bailey and Bailey</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Banks</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Bond &amp;Tax Reports</unittitle>
+<unitdate>1998-1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box12.12' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- By-Law Changes</unittitle>
+<unitdate>1998-1999</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box13.13' type='box'>13</container>
+<container parent='box13.13' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Carpet and Combined Funds</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Change of Status and Reinstatements</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Charges Against Delegate Election</unittitle>
+<unitdate>1997-1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Christmas Party</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Copy of Bills</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Correspondence in General</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Dinners</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- District Council Correspondence</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- District Council Minutes</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- District Council New Members</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- District Council Reports</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Donations</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Fifty-Year Members</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box13.13' type='folder'>14.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box14.14' type='box'>14</container>
+<container parent='box14.14' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- General Office Reports</unittitle>
+<unitdate>1997-1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Insurance</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Kings Dominion</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Letters from General Office</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Letters Received in General</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Letters to Apprentice School</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Letters to General Office</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Maryland and Delaware State Council</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Merrill Lynch</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Minutes</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Miscellaneous</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Officers and Delegate Expenses</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box14.14' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Pension Plan</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container id='box15.15' type='box'>15</container>
+<container parent='box15.15' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Pins and Certificates</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box15.15' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Quarterly Reports</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box15.15' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Supplies Purchased</unittitle>
+<unitdate>1998</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box15.15' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Trust Funds</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box15.15' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Time Sheets</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box15.15' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Work Hour Cards</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box15.15' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Active Work Cards</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box15.15' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Address Changes</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box16.16' type='box'>16</container>
+<container parent='box16.16' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Apprentice Graduation Dinner</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Correspondence</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Letters Mailed</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Bailey and Bailey</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Change of Status</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Christmas Party</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- District Council Reports</unittitle>
+<unitdate>2000-2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Elections</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Fifty-Year Members</unittitle>
+<unitdate>2000</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box16.16' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- General Convention</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box17.17' type='box'>17</container>
+<container parent='box17.17' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Mailed</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Received</unittitle>
+<unitdate>1999-2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Kings Dominion</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Letters Mailed In General</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Letters Received in General</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Minutes</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Pins and Certificates</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Quarterly Reports</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- 1st Quarter Receipts</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- 2nd Quarter Receipts</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- 3rd Quarter Receipts</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- 4th Quarter Receipts</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Correspondence</unittitle>
+<unitdate>2000</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>14.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Letters Mailed</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>15.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Minutes</unittitle>
+<unitdate>2000</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box17.17' type='folder'>16.0</container>
+<unittitle>Administrative Files -- General -- Regional Council New Members</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box18.18' type='box'>18</container>
+<container parent='box18.18' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Correspondence</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Graduation Dinner</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Letters Mailed</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Bailey and Bailey Audit Report</unittitle>
+<unitdate>June 30, 1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- By-Law Changes</unittitle>
+<unitdate>2001-2002</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Change of Status</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Christmas Party</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Donations</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Elections</unittitle>
+<unitdate>2001-2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Fifty-Year Members</unittitle>
+<unitdate>2001</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Kings Dominion</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box18.18' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Mailed </unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box19.19' type='box'>19</container>
+<container parent='box19.19' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Received</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Letters Mailed In General</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Letters Received in General</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Minutes</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Pins and Certificates</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Quarterly Reports</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Correspondence</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Correspondence</unittitle>
+<unitdate>July 2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Letters Mailed</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Regional Council New Members</unittitle>
+<unitdate>2001-2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Reports</unittitle>
+<unitdate>2001</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Summary</unittitle>
+<unitdate>2001</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Supplies Purchased</unittitle>
+<unitdate>1999-2001</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>14.0</container>
+<unittitle>Administrative Files -- General -- Applications</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box19.19' type='folder'>15.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Graduation Dinner</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box20.20' type='box'>20</container>
+<container parent='box20.20' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Correspondence</unittitle>
+<unitdate>2001-2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Letters Mailed</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Banks</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Bond and Tax Reports</unittitle>
+<unitdate>2001-2003 and undated</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Bond and Tax Reports</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Change of Status</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Christmas Party</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Copy of Bills</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Donations</unittitle>
+<unitdate>2002</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Environmental Information</unittitle>
+<unitdate>2002 and undated</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Fifty-Year Members</unittitle>
+<unitdate>2002</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box20.20' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box21.21' type='box'>21</container>
+<container parent='box21.21' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2002-2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Mailed</unittitle>
+<unitdate>June 2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Received</unittitle>
+<unitdate>2002-2003</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- General Office Reports</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Insurance</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Kings Dominion</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Letters in General</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Letters Received in General</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Merrill Lynch</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Merrill Lynch</unittitle>
+<unitdate>2002-2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Minutes</unittitle>
+<unitdate>2002</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Miscellaneous</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box21.21' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Officers and Delegate Expenses</unittitle>
+<unitdate>2002-2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box22.22' type='box'>22</container>
+<container parent='box22.22' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Pins and Certificates</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Quarterly Reports</unittitle>
+<unitdate>2002-2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Correspondence</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Regional Council New Members</unittitle>
+<unitdate>2002-2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Reports</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- Time Sheets</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Trust Funds</unittitle>
+<unitdate>2002-2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- UNET</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Women's Conference</unittitle>
+<unitdate>2002</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Correspondence</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Graduation Dinner</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Apprenticeship Letters Mailed</unittitle>
+<unitdate>2003-2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box22.22' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Change of Status and Reinstatements</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box23.23' type='box'>23</container>
+<container parent='box23.23' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Christmas Party</unittitle>
+<unitdate>2003</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Donations</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Elections</unittitle>
+<unitdate>2003</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Fifty-Year Members</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Mailed</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Received</unittitle>
+<unitdate>2003</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Kings Dominion</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Letters Mailed In General</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Letters Received in General</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Meeting Attendance</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Meeting Attendance/Jackets </unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Minutes</unittitle>
+<unitdate>2003</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>14.0</container>
+<unittitle>Administrative Files -- General -- Pins and Certificates</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>15.0</container>
+<unittitle>Administrative Files -- General -- Quarterly Reports</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>16.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Correspondence</unittitle>
+<unitdate>2003</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>17.0</container>
+<unittitle>Administrative Files -- General -- Regional Council New Members</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box23.23' type='folder'>18.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Reports</unittitle>
+<unitdate>2003</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container id='box24.24' type='box'>24</container>
+<container parent='box24.24' type='folder'>1.0</container>
+<unittitle>Administrative Files -- General -- Applications for Illness or Injury Disablement</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>2.0</container>
+<unittitle>Administrative Files -- General -- Change of Status and Reinstatements</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>3.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>4.0</container>
+<unittitle>Administrative Files -- General -- Funeral Donations</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>5.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Received</unittitle>
+<unitdate>2004</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>6.0</container>
+<unittitle>Administrative Files -- General -- General Office Letters Received</unittitle>
+<unitdate>April 23, 2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>7.0</container>
+<unittitle>Administrative Files -- General -- Kings Dominion</unittitle>
+<unitdate>2004</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>8.0</container>
+<unittitle>Administrative Files -- General -- Letters Mailed In General</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>9.0</container>
+<unittitle>Administrative Files -- General -- Letters Received in General</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>10.0</container>
+<unittitle>Administrative Files -- General -- Meeting Attendance</unittitle>
+<unitdate>2004</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>11.0</container>
+<unittitle>Administrative Files -- General -- Minutes</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>12.0</container>
+<unittitle>Administrative Files -- General -- Minutes</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box24.24' type='folder'>13.0</container>
+<unittitle>Administrative Files -- General -- Regional Council Correspondence</unittitle>
+<unitdate>2004</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+</c02><c02 level='subseries' id='subseries1.4'><did><unittitle>Financial Files</unittitle>
+<unitdate>1956-1989</unitdate>
+<physdesc>0.50 linear feet</physdesc>
+</did>
+<c03 level='file'>
+<did>
+<container id='box25.25' type='box'>25</container>
+<container parent='box25.25' type='folder'>1.0</container>
+<unittitle>Financial Records -- Accounts Receivable Record Book</unittitle>
+<unitdate>1975-1978</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>2.0</container>
+<unittitle>Financial Records -- Bailey and Bailey</unittitle>
+<unitdate>1969</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>3.0</container>
+<unittitle>Financial Records -- Contingent Fund</unittitle>
+<unitdate>1964-1969</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>4.0</container>
+<unittitle>Financial Records -- Contingent Fund</unittitle>
+<unitdate>1969-1975</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>5.0</container>
+<unittitle>Financial Records -- Contingent Fund</unittitle>
+<unitdate>1976-1981</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>6.0</container>
+<unittitle>Financial Records -- Contingent Fund</unittitle>
+<unitdate>1981-1983</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>7.0</container>
+<unittitle>Financial Records -- Contingent Fund</unittitle>
+<unitdate>1984-1989</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>8.0</container>
+<unittitle>Financial Records -- Executive Board</unittitle>
+<unitdate>1963</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>9.0</container>
+<unittitle>Financial Records -- Petty Cash Record Book</unittitle>
+<unitdate>1977-1978</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict></c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>10.0</container>
+<unittitle>Financial Records -- Sixth Floor Expeditures</unittitle>
+<unitdate>1978-1979</unitdate>
+</did>
+</c03>
+<c03 level='file'>
+<did>
+<container parent='box25.25' type='folder'>11.0</container>
+<unittitle>Financial Records -- Welfare Fund</unittitle>
+<unitdate>1956</unitdate>
+</did>
+</c03>
+</c02></c01>
+<c01 level='series' id='series2'>
+<did>
+<unittitle>Membership Files</unittitle>
+<unitdate>1910-2007 and undated</unitdate>
+<physdesc>11.50 linear feet</physdesc></did>
+
+<c02 level='file'>
+<did>
+<container id='box26.26' type='box'>26</container>
+<container parent='box26.26' type='folder'>1.0</container>
+<unittitle>Membership Files -- Admitted on C. C. and Deaths</unittitle>
+<unitdate>January 1976</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1910</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1911</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1911</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1912</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1912</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>7.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1913</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>8.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1914</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box26.26' type='folder'>9.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1915</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box27.27' type='box'>27</container>
+<container parent='box27.27' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1916</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box27.27' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1917</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box27.27' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1917</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box27.27' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1917</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box27.27' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1917</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box28.28' type='box'>28</container>
+<container parent='box28.28' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1918</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box28.28' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1918</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box28.28' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1918</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box28.28' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1918</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box28.28' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1918</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box29.29' type='box'>29</container>
+<container parent='box29.29' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1919</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box29.29' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1920</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box29.29' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1921</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box29.29' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1922</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box29.29' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1922</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box30.30' type='box'>30</container>
+<container parent='box30.30' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1923</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box30.30' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1924</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box30.30' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1925</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box30.30' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1925</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box30.30' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1926</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box30.30' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1927-1928</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box30.30' type='folder'>7.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1929-1930</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box31.31' type='box'>31</container>
+<container parent='box31.31' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1931-1933</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box31.31' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1934-1935</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box31.31' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1936-1937</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box31.31' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1937-1938</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box31.31' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1939</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box31.31' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1940</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box31.31' type='folder'>7.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1940</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box32.32' type='box'>32</container>
+<container parent='box32.32' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1940</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box32.32' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1940</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box32.32' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1941</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box32.32' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1941</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box32.32' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1941</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box33.33' type='box'>33</container>
+<container parent='box33.33' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1941</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box33.33' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1942</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box33.33' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1942</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box33.33' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1942</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box33.33' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1942</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box34.34' type='box'>34</container>
+<container parent='box34.34' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1942</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box34.34' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1942</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box34.34' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1943-1945</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box34.34' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1946</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box34.34' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1946</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box35.35' type='box'>35</container>
+<container parent='box35.35' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1947</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box35.35' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1948</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box35.35' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1948</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box35.35' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1949</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box35.35' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1950</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box36.36' type='box'>36</container>
+<container parent='box36.36' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1951</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box36.36' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1952-1953</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box36.36' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1954-1955</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box36.36' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1956</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box36.36' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1957-1958</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box36.36' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1959</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box37.37' type='box'>37</container>
+<container parent='box37.37' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1960</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box37.37' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1961</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box37.37' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1962</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box37.37' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1963</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box37.37' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1963</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box37.37' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1964</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box38.38' type='box'>38</container>
+<container parent='box38.38' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1965</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box38.38' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1966</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box38.38' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1966</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box38.38' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1967</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box38.38' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1968</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box38.38' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1968</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box39.39' type='box'>39</container>
+<container parent='box39.39' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1969</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box39.39' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1969</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box39.39' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1970</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box39.39' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1970</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box39.39' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1971</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box39.39' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1972</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box40.40' type='box'>40</container>
+<container parent='box40.40' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1972</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box40.40' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1973</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box40.40' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1973</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box40.40' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1973</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box40.40' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1974</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box40.40' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1974</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box41.41' type='box'>41</container>
+<container parent='box41.41' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1974</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box41.41' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1974</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box41.41' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1975-1976</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box41.41' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1977-1978</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box41.41' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1979</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box41.41' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1980</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box42.42' type='box'>42</container>
+<container parent='box42.42' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1981</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box42.42' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1982-1983</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box42.42' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1984</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box42.42' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1985</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box42.42' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1985</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box42.42' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1986</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box43.43' type='box'>43</container>
+<container parent='box43.43' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1986</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box43.43' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1986</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box43.43' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1987</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box43.43' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1987</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box43.43' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box43.43' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box43.43' type='folder'>7.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1989</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box43.43' type='folder'>8.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1989</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box44.44' type='box'>44</container>
+<container parent='box44.44' type='folder'>1.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>2.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1991</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>3.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>4.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>5.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>6.0</container>
+<unittitle>Membership Files -- Applications</unittitle>
+<unitdate>2000</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>7.0</container>
+<unittitle>Membership Files -- Applications (Blank)</unittitle>
+<unitdate>undated</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>8.0</container>
+<unittitle>Membership Files -- Change of Status</unittitle>
+<unitdate>1979</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>9.0</container>
+<unittitle>Membership Files -- Change of Status</unittitle>
+<unitdate>1979</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box44.44' type='folder'>10.0</container>
+<unittitle>Membership Files -- Change of Status</unittitle>
+<unitdate>1980-1982</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box45.45' type='box'>45</container>
+<container parent='box45.45' type='folder'>1.0</container>
+<unittitle>Membership Files -- Change of Status</unittitle>
+<unitdate>1983-1984</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box45.45' type='folder'>2.0</container>
+<unittitle>Membership Files -- Change of Status</unittitle>
+<unitdate>1985-1989</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box45.45' type='folder'>3.0</container>
+<unittitle>Membership Files -- Change of Status</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box45.45' type='folder'>4.0</container>
+<unittitle>Membership Files -- Clearance Cards and Deaths</unittitle>
+<unitdate>1974-1975</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box45.45' type='folder'>5.0</container>
+<unittitle>Membership Files -- Day Book</unittitle>
+<unitdate>June 1974</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box45.45' type='folder'>6.0</container>
+<unittitle>Membership Files -- Dues</unittitle>
+<unitdate>2001-2007</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box46.46' type='box'>46</container>
+<container parent='box46.46' type='folder'>1.0</container>
+<unittitle>Membership Files -- Dues</unittitle>
+<unitdate>2001-2007</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box46.46' type='folder'>2.0</container>
+<unittitle>Membership Files -- Dues</unittitle>
+<unitdate>2001-2007</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box46.46' type='folder'>3.0</container>
+<unittitle>Membership Files -- Dues</unittitle>
+<unitdate>2001-2007</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box46.46' type='folder'>4.0</container>
+<unittitle>Membership Files -- Miscellaneous</unittitle>
+<unitdate>1938-1943, 1967 and undated</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box46.46' type='folder'>5.0</container>
+<unittitle>Membership Files -- Officers and Trustees Meeting Night -- Signatures</unittitle>
+<unitdate>1977-1983</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box46.46' type='folder'>6.0</container>
+<unittitle>Membership Files -- Roll Call Book</unittitle>
+<unitdate>1934-1938</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box46.46' type='folder'>7.0</container>
+<unittitle>Membership Files -- Roll Call Book</unittitle>
+<unitdate>1984-1989</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box46.46' type='folder'>8.0</container>
+<unittitle>Membership Files -- Roll Call Book</unittitle>
+<unitdate>1990-1996</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box47.47' type='box'>47</container>
+<container parent='box47.47' type='folder'>1.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>2.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>3.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>4.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>5.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>6.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>7.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>8.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>9.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>10.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>11.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>12.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>13.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>14.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>15.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>16.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>17.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>18.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box47.47' type='folder'>19.0</container>
+<unittitle>Membership Files -- Suspended Books</unittitle>
+<unitdate>1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+</c01>
+<c01 level='series' id='series3'>
+<did>
+<unittitle>Publications</unittitle>
+<unitdate>1912-1998</unitdate>
+<physdesc>0.25 linear feet</physdesc></did>
+
+<c02 level='file'>
+<did>
+<container id='box48.48' type='box'>48</container>
+<container parent='box48.48' type='folder'>1.0</container>
+<unittitle>Publications -- AFL-CIO -- <title render="italic">"The Builders</title>"</unittitle>
+<unitdate>1997-1998</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>2.0</container>
+<unittitle>Publications -- Agreements</unittitle>
+<unitdate>1981</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>3.0</container>
+<unittitle>Publications -- <title render="italic">Carpenter's News</title></unittitle>
+<unitdate>1970-1980</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>4.0</container>
+<unittitle>Publications -- Convention Files -- Seventeenth Biennial (cover only)</unittitle>
+<unitdate>1912</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>5.0</container>
+<unittitle>Publications -- Labor-Management Reporting &amp; Disclosure Act of 1959</unittitle>
+<unitdate>1959</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>6.0</container>
+<unittitle>Publications -- <title render="italic">Sawing Through</title></unittitle>
+<unitdate>1973-1982</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>7.0</container>
+<unittitle>Publications -- <title render="italic">The Thalco Trainer for Stewards &amp; Committeemen</title></unittitle>
+<unitdate>1970</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>8.0</container>
+<unittitle>Publications -- <title render="italic">Washington Building Trades Journal</title></unittitle>
+<unitdate>1947</unitdate>
+</did>
+
+</c02>
+</c01>
+<c01 level='series' id='series4'>
+<did>
+<unittitle>Contractor Files</unittitle>
+<unitdate>1977-1999 and undated</unitdate>
+<physdesc>1.75 linear feet</physdesc></did>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>9.0</container>
+<unittitle>Contractor Files -- Absolute Fixture Services</unittitle>
+<unitdate>1994-1995</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>10.0</container>
+<unittitle>Contractor Files -- Active Negotations -- Hyatt Regency Hotel</unittitle>
+<unitdate>1989-1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>11.0</container>
+<unittitle>Contractor Files -- ACE Scaffolding</unittitle>
+<unitdate>1977</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>12.0</container>
+<unittitle>Contractor Files -- Barianos Historic Restoration</unittitle>
+<unitdate>January 29, 1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>13.0</container>
+<unittitle>Contractor Files -- Blazer Enterprises</unittitle>
+<unitdate>July 11, 1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>14.0</container>
+<unittitle>Contractor Files -- Boscart Construction</unittitle>
+<unitdate>1994-1996</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>15.0</container>
+<unittitle>Contractor Files -- Catalytic Enterprises Limited</unittitle>
+<unitdate>1989-1993</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>16.0</container>
+<unittitle>Contractor Files -- Chas H. Riddle Company</unittitle>
+<unitdate>1993</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>17.0</container>
+<unittitle>Contractor Files -- CHC Contracting -- Grievances</unittitle>
+<unitdate>1995</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>18.0</container>
+<unittitle>Contractor Files -- Chopp and Company</unittitle>
+<unitdate>1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>19.0</container>
+<unittitle>Contractor Files -- Chopp and Company -- Agreement</unittitle>
+<unitdate>March 26, 1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box48.48' type='folder'>20.0</container>
+<unittitle>Contractor Files -- Chopp and Company -- Agreements</unittitle>
+<unitdate>1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box49.49' type='box'>49</container>
+<container parent='box49.49' type='folder'>1.0</container>
+<unittitle>Contractor Files -- C.J. Coakley Company</unittitle>
+<unitdate>1988-1992</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>2.0</container>
+<unittitle>Contractor Files -- C.J. Coakley Company</unittitle>
+<unitdate>1993-1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>3.0</container>
+<unittitle>Contractor Files -- Coastal Marine Science</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>4.0</container>
+<unittitle>Contractor Files -- Collective Bargaining Agreement</unittitle>
+<unitdate>1978-1979 and undated</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>5.0</container>
+<unittitle>Contractor Files -- Collective Bargaining Agreement -- Study</unittitle>
+<unitdate>September 20, 1993</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>6.0</container>
+<unittitle>Contractor Files -- Commerical Interiors</unittitle>
+<unitdate>February 27, 1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>7.0</container>
+<unittitle>Contractor Files -- Contract Negotiations Exhibit Aid</unittitle>
+<unitdate>1989</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>8.0</container>
+<unittitle>Contractor Files -- D and D Project Expeditors</unittitle>
+<unitdate>April 1997</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>9.0</container>
+<unittitle>Contractor Files -- DMP Contractors Inc.</unittitle>
+<unitdate>August 31, 1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>10.0</container>
+<unittitle>Contractor Files -- Drywall Contractors Meeting</unittitle>
+<unitdate>1989-1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>11.0</container>
+<unittitle>Contractor Files -- Eagle Corporation (The)</unittitle>
+<unitdate>1994-1995</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>12.0</container>
+<unittitle>Contractor Files -- Exhibit - Aids of Maryland Inc.</unittitle>
+<unitdate>1987-1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>13.0</container>
+<unittitle>Contractor Files -- Financial Core Membership -- Letters</unittitle>
+<unitdate>1988-1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>14.0</container>
+<unittitle>Contractor Files -- Galbreath Company -- Contract Negotiations</unittitle>
+<unitdate>1990-1991</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>15.0</container>
+<unittitle>Contractor Files -- Galbreath Company -- Wage Negotiations</unittitle>
+<unitdate>1990-1992</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>16.0</container>
+<unittitle>Contractor Files -- Galbreath-Ruffin Corp. -- Agreements</unittitle>
+<unitdate>1989</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>17.0</container>
+<unittitle>Contractor Files -- Galbreath-Ruffin Corp. -- Wage Negotiations</unittitle>
+<unitdate>1989-1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>18.0</container>
+<unittitle>Contractor Files -- George Hyman Construction Co.</unittitle>
+<unitdate>1988-1996</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>19.0</container>
+<unittitle>Contractor Files -- George Hyman Construction Co. -- Contract Negotations</unittitle>
+<unitdate>1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>20.0</container>
+<unittitle>Contractor Files -- George Hyman Construction Co. -- Missing Tools</unittitle>
+<unitdate>September 1991</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box49.49' type='folder'>21.0</container>
+<unittitle>Contractor Files -- George Hyman Construction Co. -- Project Agreements</unittitle>
+<unitdate>December 1991</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box50.50' type='box'>50</container>
+<container parent='box50.50' type='folder'>1.0</container>
+<unittitle>Contractor Files -- Hope Properties</unittitle>
+<unitdate>1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>2.0</container>
+<unittitle>Contractor Files -- J.D. Allen Company</unittitle>
+<unitdate>1989-1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>3.0</container>
+<unittitle>Contractor Files -- LTI Contracting/Low Temp Insulations, Inc., R.J. Industries Inc.</unittitle>
+<unitdate>October 15, 1997</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>4.0</container>
+<unittitle>Contractor Files -- LCB Services, Inc.</unittitle>
+<unitdate>August 11, 1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>5.0</container>
+<unittitle>Contractor Files -- Maryland Drywall</unittitle>
+<unitdate>1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>6.0</container>
+<unittitle>Contractor Files -- Maryland Wood Preserving Corporation</unittitle>
+<unitdate>1989-1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>7.0</container>
+<unittitle>Contractor Files -- May Department Stores Company</unittitle>
+<unitdate>December 18, 1998</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>8.0</container>
+<unittitle>Contractor Files -- Mid-Atlantic Laboratory Fixtures Inc.</unittitle>
+<unitdate>1990</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>9.0</container>
+<unittitle>Contractor Files -- Minority Contractors</unittitle>
+<unitdate>undated</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>10.0</container>
+<unittitle>Contractor Files -- M.J. Fernandez Co. Inc.</unittitle>
+<unitdate>September 17, 1991</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>11.0</container>
+<unittitle>Contractor Files -- Nondiscrimination</unittitle>
+<unitdate>1984-1996</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>12.0</container>
+<unittitle>Contractor Files -- OMNI Shoreham Hotel</unittitle>
+<unitdate>1988-1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>13.0</container>
+<unittitle>Contractor Files -- Pittcon Industries</unittitle>
+<unitdate>1987-1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>14.0</container>
+<unittitle>Contractor Files -- Pittcon Industries</unittitle>
+<unitdate>1987-1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>15.0</container>
+<unittitle>Contractor Files -- Professional Installations, Inc.</unittitle>
+<unitdate>1996</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>16.0</container>
+<unittitle>Contractor Files -- Rayman, Martin and Fader Inc. -- Bad Checks</unittitle>
+<unitdate>1992-1993</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>17.0</container>
+<unittitle>Contractor Files -- Rayman, Martin and Fader Inc. -- Bankruptcy</unittitle>
+<unitdate>1992-1993</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>18.0</container>
+<unittitle>Contractor Files -- Riggs Distler and Co. Inc.</unittitle>
+<unitdate>1987-1996</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>19.0</container>
+<unittitle>Contractor Files -- Southeastern Floor Co.</unittitle>
+<unitdate>1992</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>20.0</container>
+<unittitle>Contractor Files -- Southern Pan and Shoring -- Federal Triangle</unittitle>
+<unitdate>1994-1995</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box50.50' type='folder'>21.0</container>
+<unittitle>Contractor Files -- Southern Pan and Shoring -- Grievance</unittitle>
+<unitdate>September 1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box51.51' type='box'>51</container>
+<container parent='box51.51' type='folder'>1.0</container>
+<unittitle>Contractor Files -- Standard Acoustics Inc./Ceilings and Partitions Inc.</unittitle>
+<unitdate>1988-1994</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>2.0</container>
+<unittitle>Contractor Files -- Underpinning and Foundation Constructors, Inc.</unittitle>
+<unitdate>October 1997</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>3.0</container>
+<unittitle>Contractor Files -- Union Bid List</unittitle>
+<unitdate>undated</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>4.0</container>
+<unittitle>Contractor Files -- VCI, Inc.</unittitle>
+<unitdate>November 18, 1997</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>5.0</container>
+<unittitle>Contractor Files -- Volpe Construction Co. Inc.</unittitle>
+<unitdate>September 16, 1988</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>6.0</container>
+<unittitle>Contractor Files -- Woods, Susan Inc. -- Trust Fund Purposes Only</unittitle>
+<unitdate>1993-1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>7.0</container>
+<unittitle>Contractor Files -- Woods, Susan Inc./KWK</unittitle>
+<unitdate>1992-1999</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>8.0</container>
+<unittitle>Contractor Files -- Woods, Susan Inc./KWK</unittitle>
+<unitdate>1994-1995</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>9.0</container>
+<unittitle>Contractor Files -- W. S. Schlosser Co. Inc.</unittitle>
+<unitdate>1989-1992</unitdate>
+</did>
+<accessrestrict><p>Restricted</p></accessrestrict>
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box51.51' type='folder'>10.0</container>
+<unittitle>Contractor Files -- Ziniz Inc.</unittitle>
+<unitdate>June 1990</unitdate>
+</did>
+
+</c02>
+</c01>
+<c01 level='series' id='series5'>
+<did>
+<unittitle>Photographs</unittitle>
+<unitdate>1900 and 1998</unitdate>
+<physdesc>1.50 linear feet and 1 item</physdesc></did>
+
+<c02 level='file'>
+<did>
+<container id='box52.52' type='box'>52</container>
+<container parent='box52.52' type='folder'>1.0</container>
+<unittitle>Photographs -- Pins and Certificates</unittitle>
+<unitdate>1998</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box53.53' type='box'>53</container>
+<container parent='box53.53' type='folder'>1.0</container>
+<unittitle>Photographs -- 20th General Convention</unittitle>
+<unitdate>1900</unitdate>
+</did>
+
+</c02>
+</c01>
+<c01 level='series' id='series6'>
+<did>
+<unittitle>Memorabilia</unittitle>
+<unitdate>1950 and undated</unitdate>
+<physdesc>4 items</physdesc></did>
+
+<c02 level='file'>
+<did>
+<container id='box54.54' type='box'>54</container>
+<container parent='box54.54' type='folder'>1.0</container>
+<unittitle>Memorabilia (2468) -- Resolution regarding Joseph K. Potter</unittitle>
+<unitdate>undated</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container id='box55.55' type='box'>55</container>
+<container parent='box55.55' type='folder'>1.0</container>
+<unittitle>Memorabilia (2469) -- Embossing Stamp</unittitle>
+<unitdate>undated</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box55.55' type='folder'>2.0</container>
+<unittitle>Memorabilia (2470) -- Kaiser Steel</unittitle>
+<unitdate>1950</unitdate>
+</did>
+
+</c02>
+
+<c02 level='file'>
+<did>
+<container parent='box55.55' type='folder'>3.0</container>
+<unittitle>Memorabilia (2558) -- Local 132 T-shirt</unittitle>
+<unitdate>undated</unitdate>
+</did>
+
+</c02>
+</c01>
+</dsc></archdesc></ead>
