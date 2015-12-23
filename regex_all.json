@@ -15,7 +15,7 @@
 	"pattern": "<scopecontent id=(.*?)encodinganalog=\"520\">\\n<head>Scope and Content of Collection</head>\\n<p></p></scopecontent>", 
 	"replacement": "" 
 	},
-{  	"description": "Remove empty <p> tags (4).",
+{  	"description": "Remove empty <p> tags (4)",
 	"pattern": "<scopecontent>\\n<p></p></scopecontent>", 
 	"replacement": "" 
 	},

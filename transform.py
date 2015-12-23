@@ -84,8 +84,9 @@ def apply_regexes(text, transformations):
 def xml_transformations(filepath):
     tree = ET.parse(filepath)
     root = tree.getroot()
-    dsc = root.find('.//archdesc/dsc/[@type="in-depth"]')
-    
+    unitdates = root.findall('.//archdesc/did/unitdate')
+    for u in unitdates:
+        print(u.tag, u.attrib, u.text)
     result = ET.tostring(root, encoding='utf-8')
     return result
 
