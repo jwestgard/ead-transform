@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-import sys
-import os
-import re
-import xml.etree.ElementTree as ET
-import json
 import argparse
 import codecs
+import json
+import os
+import re
+from io import BytesIO
+import sys
+import lxml.etree as ET
+import xml.parsers.expat.errors as xerr
 
 
 #==============================
@@ -34,13 +36,15 @@ def get_arguments():
 #========================================
 def get_files_in_path(rootdir, recursive):
     result = []
+    print(recursive)
     if recursive is True:
         for (root, dir, files) in os.walk(rootdir):
             result.extend(
                 [os.path.join(root, f) for f in files if not f.startswith('.')])
     else:
-        result = [f for f in os.listdir(rootdir) if not f.startswith(
-            '.') and os.path.isfile(os.path.join(rootdir, f))]
+        result = [os.path.join(rootdir, f) for f in os.listdir(
+            rootdir) if not f.startswith('.') and os.path.isfile(
+            os.path.join(rootdir, f))]
     return result
 
 
@@ -49,15 +53,15 @@ def get_files_in_path(rootdir, recursive):
 #================================================
 def verified_decode(f):
     encodings = ['ascii', 'utf-8', 'windows-1252', 'latin-1']
-    print("Checking encoding...")
+    print("  Checking encoding...")
     for encoding in encodings:
         bytes = codecs.open(f, mode='r', encoding=encoding, errors='strict')
         try:
             b = bytes.read()
-            print('  - {0} OK.'.format(encoding))
+            print('    - {0} OK.'.format(encoding))
             return b
         except UnicodeDecodeError:
-            print('  - {0} Error!'.format(encoding))
+            print('    - {0} Error!'.format(encoding))
     return False
 
 
@@ -90,13 +94,64 @@ def apply_regexes(text, transformations):
 #=================================================
 # apply the xml transformations to the input file
 #=================================================
-def apply_transformations(text):
-    root = ET.fromstring(text)
-    unitdates = root.findall('.//archdesc/did/unitdate')
-    for u in unitdates:
-        print(u.tag, u.attrib, u.text)
-    result = ET.tostring(root, encoding='utf-8')
-    return result
+def apply_transformations(xml_as_bytes):
+    file_like_obj = BytesIO(xml_as_bytes)
+    tree = ET.parse(file_like_obj)
+    root = tree.getroot()
+    
+    
+# REQUIRED
+#---------------------
+    # <container> tags
+    file_item_level_dids = [d for d in root.iter('did') if d.getparent().get(
+        'level') in ['file', 'item']]
+    for did in file_item_level_dids:
+        container_types = [c.get('type') for c in d if c.tag == 'container']
+        if 'box' not in container_types:
+            existing_container = d.find('container/[@type="folder"]')
+            box_attribute = existing_container.get('parent')
+            new_container = ET.SubElement(d, "container")
+            new_container.set('type', 'box')
+            
+        # existing = d.find('container/[@type="folder"]')
+        #    m = re.search(r'box(\d+?)\.', value)
+        #    if m:
+        #       new = m.group(1)
+    
+    # incorrect box numbers
+    # extent tags 
+    
+    # add title attribute to dao tags
+    for dao in root.iter('dao'):
+        parent = dao.getparent()
+        unittitle = parent.find('unittitle').text
+        dao.set('title', unittitle)
+        
+    # empty paragraph tags -- regex?
+    # replace special characters -- corrected by encoding fix
+    
+    
+# OPTIMIZATION
+#---------------------
+    # date expressions
+    # collection titles
+    # dates
+    # extents
+    # scope and content notes
+    
+    
+# OPTIONAL
+#---------------------
+    # accession numbers
+    # handles
+    
+    
+# ADDITIONAL QUIRKS
+#---------------------   
+    # stack locations
+    # language descriptions
+    
+    return tree
 
 
 #================
@@ -111,31 +166,29 @@ def main():
     # get files from inpath
     if args.input:
         input_dir = args.input
-        print("Checking files in {0}...".format(input_dir))
+        print("Checking files in folder '{0}'...".format(input_dir))
         files_to_check = get_files_in_path(input_dir, recursive=args.recursive)
     # otherwise, use arguments for files to check
     else:
         input_dir = os.path.dirname(args.files[0])
         print(
             "No input path specified; processing files from arguments...")
-        files_to_check = [os.path.basename(f) for f in args.files]
+        files_to_check = [f for f in args.files]
     # set path for output
     output_dir = args.output
     
-    # if resume flag set, remove files in outpath from files to check
+    # notify that resume flag is set
     if args.resume:
-        existing_files = get_files_in_path(output_dir, recursive=args.recursive)
-        files_to_check = [f for f in files_to_check if os.path.join(
-            os.path.relpath(f, input_dir), output_dir) not in existing_files]
+        print("Resume flag (-r) is set, will skip existing files")
     
     # if transform flag is set, load json transform file
     if args.transform:
         print("Loading regex transformations from file ...")
         transformations = load_transformations(args.transform)
     
-    # if encoding flag is set
+    # notify that encoding-check-only flag is set
     if args.encoding is True:
-        print("-e flag set, will check encoding only...")
+        print("Encoding flag (-e) flag is set, will check encoding only...")
 
     # loop and process each file
     for n, f in enumerate(files_to_check):
@@ -147,36 +200,51 @@ def main():
         
         # summarize file paths to screen
         print("\n{0}. Processing EAD file: {1}".format(n+1, f))
-        print("   IN => {0}".format(f))
-        print("   OUT => {0}".format(output_path))
+        print("  IN  => {0}".format(f))
+        print("  OUT => {0}".format(output_path))
+        
+        # if the resume flag is set, skip files for which output file exists
+        if args.resume:
+            if os.path.exists(output_path) and os.path.isfile(output_path):
+                print("  Skipping {0}: output file exists".format(f))
+                continue
         
         # attempt strict decoding of file according to common schemes
-        ead = verified_decode(f)
-        if not ead:
-            print("Could not reliably decode file, skipping...".format(f))
+        ead_string = verified_decode(f)
+        if not ead_string:
+            print("  Could not reliably decode file, skipping...".format(f))
             errors.append("{0} could not be decoded.".format(f))
             continue
 
         if args.encoding is True:
-            # skip rest of loop if encoding-only flag is set
+            # skip rest of loop if encoding-only flag is set and write file
+            with open(output_path, 'w') as outfile:
+                outfile.write(ead_string)
             continue
         else:
             if args.transform is True:
                 # regex transformations
-                print("Applying regexes...")
-                ead = apply_regexes(ead, transformations)
-            else:
-                # other transformations
-                print("Applying XML transformations...")
-                try:
-                    ead = apply_transformations(ead)
-                except ET.ParseError as e:
-                    errors.append("{0} malformed ({1} at {2})".format(
-                        f, e.code, e.position))
-                        
-        # write out result
-        with open(output_path, 'w') as outfile:
-            outfile.write(str(ead))
+                print("  Applying regexes from file...")
+                ead_string = apply_regexes(ead, transformations)
+            
+            # other transformations
+            print("  Applying XML transformations...")
+            try:
+                ead_tree = apply_transformations(ead_string.encode('utf-8'))
+            except ET.ParseError as e:
+                print("  {0} is malformed; error code {1} ({2}) at {3})".format(
+                    f, e.code, xerr[e.code], e.position))
+                errors.append(
+                    "{0} is malformed; error code {1} ({2}) at {3})".format(
+                        f, e.code, xerr[e.code], e.position))
+        
+            # write out result
+            ead_tree.write(output_path)
+    
+    # write out error log if any errors occurred
+    if errors:
+        with open('errors.txt', 'w') as errfile:
+            errfile.writelines("\n".join(errors))
 
 if __name__ == '__main__':
     main()
