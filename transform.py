@@ -100,8 +100,8 @@ def apply_transformations(xml_as_bytes):
     root = tree.getroot()
     
     
-# REQUIRED
-#---------------------
+    # REQUIRED
+    #=========
     # <container> tags
     file_item_level_dids = [d for d in root.iter('did') if d.getparent().get(
         'level') in ['file', 'item']]
@@ -119,7 +119,26 @@ def apply_transformations(xml_as_bytes):
         #       new = m.group(1)
     
     # incorrect box numbers
-    # extent tags 
+    boxes = [c for c in root.iter('container') if c.get('type') == 'box']
+    for box in boxes:
+        id = box.get('id')
+        m = re.search(r'box(\d+?)\.\d+?', id)
+        if m:
+            if box.text != m.group(1):
+                print("changing box elem from {0} to {1} based on {2}".format(
+                    box.text, m.group(1), id)
+                box.text = m.group(1)
+        else:
+            print("could not match box number in text '{0}'".format(id)
+        
+    # extent tags
+    physdescs = [p for p in root.iter('physdesc')]
+    for p in physdescs:
+        children = [c for c in p]
+        if "extent" not in children:
+            ext = etree.SubElement(p, "extent")
+            ext.text = p.text
+            p.text = ''
     
     # add title attribute to dao tags
     for dao in root.iter('dao'):
@@ -131,23 +150,29 @@ def apply_transformations(xml_as_bytes):
     # replace special characters -- corrected by encoding fix
     
     
-# OPTIMIZATION
-#---------------------
+    # OPTIMIZATION
+    #=============
     # date expressions
+    unitdates = root.xpath(
+        "//archdesc[@level='collection' and @type='combined']/did/unitdate")
+    for u in unitdates:
+        t = u.text
+    
+    
     # collection titles
     # dates
     # extents
     # scope and content notes
     
     
-# OPTIONAL
-#---------------------
+    # OPTIONAL
+    #=========
     # accession numbers
     # handles
     
     
-# ADDITIONAL QUIRKS
-#---------------------   
+    # ADDITIONAL QUIRKS
+    #==================
     # stack locations
     # language descriptions
     
