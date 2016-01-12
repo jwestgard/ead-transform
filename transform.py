@@ -7,7 +7,7 @@ import re
 from io import BytesIO
 import sys
 import lxml.etree as ET
-import xml.parsers.expat.errors as xerr
+import xml.parsers.expat as xerr
 
 
 #==============================
@@ -106,45 +106,48 @@ def apply_transformations(xml_as_bytes):
     file_item_level_dids = [d for d in root.iter('did') if d.getparent().get(
         'level') in ['file', 'item']]
     for did in file_item_level_dids:
-        container_types = [c.get('type') for c in d if c.tag == 'container']
+        container_types = [c.get('type') for c in did if c.tag == 'container']
         if 'box' not in container_types:
-            existing_container = d.find('container/[@type="folder"]')
+            existing_container = did.find('container/[@parent]')
             box_attribute = existing_container.get('parent')
-            new_container = ET.SubElement(d, "container")
-            new_container.set('type', 'box')
+            m = re.search(r'box(\d+)\.(\d+)', box_attribute)
+            if m:
+                box_number = m.group(1)
+                box_id = "{0}.{1}".format(m.group(1), m.group(2))
+                new_container = ET.SubElement(did, "container")
+                new_container.set('type', 'box')
+                new_container.set('id', box_id)
+                new_container.text = box_number
             
-        # existing = d.find('container/[@type="folder"]')
-        #    m = re.search(r'box(\d+?)\.', value)
-        #    if m:
-        #       new = m.group(1)
-    
     # incorrect box numbers
     boxes = [c for c in root.iter('container') if c.get('type') == 'box']
     for box in boxes:
         id = box.get('id')
-        m = re.search(r'box(\d+?)\.\d+?', id)
-        if m:
-            if box.text != m.group(1):
-                print("changing box elem from {0} to {1} based on {2}".format(
-                    box.text, m.group(1), id)
-                box.text = m.group(1)
-        else:
-            print("could not match box number in text '{0}'".format(id)
-        
+        if id:
+            m = re.search(r'box(\d+?)\.\d+?', id)
+            if m:
+                if box.text != m.group(1):
+                    print("changing box elem from {0} to {1} based on {2}".format(
+                        box.text, m.group(1), id))
+                    box.text = m.group(1)
+            else:
+                print("could not match box number in text '{0}'".format(id))
+    
     # extent tags
     physdescs = [p for p in root.iter('physdesc')]
-    for p in physdescs:
-        children = [c for c in p]
+    for physdesc in physdescs:
+        children = [node for node in physdesc]
         if "extent" not in children:
-            ext = etree.SubElement(p, "extent")
-            ext.text = p.text
-            p.text = ''
+            ext = ET.SubElement(physdesc, "extent")
+            ext.text = physdesc.text
+            physdesc.text = ''
     
     # add title attribute to dao tags
     for dao in root.iter('dao'):
         parent = dao.getparent()
         unittitle = parent.find('unittitle').text
-        dao.set('title', unittitle)
+        if unittitle:
+            dao.set('title', unittitle)
         
     # empty paragraph tags -- regex?
     # replace special characters -- corrected by encoding fix
@@ -199,6 +202,7 @@ def main():
         print(
             "No input path specified; processing files from arguments...")
         files_to_check = [f for f in args.files]
+        print(files_to_check)
     # set path for output
     output_dir = args.output
     
@@ -258,10 +262,10 @@ def main():
                 ead_tree = apply_transformations(ead_string.encode('utf-8'))
             except ET.ParseError as e:
                 print("  {0} is malformed; error code {1} ({2}) at {3})".format(
-                    f, e.code, xerr[e.code], e.position))
+                    f, e.code, xerr.ErrorString(e.code), e.position))
                 errors.append(
                     "{0} is malformed; error code {1} ({2}) at {3})".format(
-                        f, e.code, xerr[e.code], e.position))
+                        f, e.code, xerr.ErrorString(e.code), e.position))
         
             # write out result
             ead_tree.write(output_path)
