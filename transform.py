@@ -152,17 +152,15 @@ def apply_transformations(xml_as_bytes):
     # empty paragraph tags -- regex?
     # replace special characters -- corrected by encoding fix
     
-    
     # OPTIMIZATION
     #=============
-    # date expressions
-    unitdates = root.xpath(
-        "//archdesc[@level='collection' and @type='combined']/did/unitdate")
-    for u in unitdates:
-        t = u.text
-    
+    # date expressions -- generate report
     
     # collection titles
+    title = root.find('titleproper')
+    print(title.text)
+    # if title.text begins with "Guide to", remove it and capitalize next word
+    
     # dates
     # extents
     # scope and content notes
@@ -179,7 +177,24 @@ def apply_transformations(xml_as_bytes):
     # stack locations
     # language descriptions
     
+    
+
+    
     return tree
+
+#=============================
+# unitdate report generation
+#============================
+def report_dates(root):
+    result = []
+    unitdates = root.xpath(
+        "//archdesc[@level='collection' and @type='combined']/did/unitdate")
+    for u in unitdates:
+        
+        result.append(u.text)
+    return result
+    
+    
 
 
 #================
@@ -190,6 +205,7 @@ def main():
     border = "=" * 19
     print("\n".join(['', border, "| EAD Transformer |", border]))
     errors = []
+    dates = []
     
     # get files from inpath
     if args.input:
@@ -260,13 +276,15 @@ def main():
             print("  Applying XML transformations...")
             try:
                 ead_tree = apply_transformations(ead_string.encode('utf-8'))
+                d = report_dates(ead_tree)
+                dates.extend(report_dates(ead_tree))
             except ET.ParseError as e:
                 print("  {0} is malformed; error code {1} ({2}) at {3})".format(
                     f, e.code, xerr.ErrorString(e.code), e.position))
                 errors.append(
                     "{0} is malformed; error code {1} ({2}) at {3})".format(
                         f, e.code, xerr.ErrorString(e.code), e.position))
-        
+            
             # write out result
             ead_tree.write(output_path)
     
@@ -274,6 +292,10 @@ def main():
     if errors:
         with open('errors.txt', 'w') as errfile:
             errfile.writelines("\n".join(errors))
+    
+    if dates:
+        with open('unitdates.txt', 'w') as datesfile:   
+            datesfile.writelines("\n".join(dates))
 
 if __name__ == '__main__':
     main()
