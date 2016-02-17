@@ -102,7 +102,7 @@ def apply_transformations(xml_as_bytes):
     
     # REQUIRED
     #=========
-    # <container> tags
+    # [1] <container> tags
     file_item_level_dids = [d for d in root.iter('did') if d.getparent().get(
         'level') in ['file', 'item']]
     for did in file_item_level_dids:
@@ -119,7 +119,7 @@ def apply_transformations(xml_as_bytes):
                 new_container.set('id', box_id)
                 new_container.text = box_number
             
-    # incorrect box numbers
+    # [2] incorrect box numbers
     boxes = [c for c in root.iter('container') if c.get('type') == 'box']
     for box in boxes:
         id = box.get('id')
@@ -133,7 +133,7 @@ def apply_transformations(xml_as_bytes):
             else:
                 print("could not match box number in text '{0}'".format(id))
     
-    # extent tags
+    # [3] extent tags
     physdescs = [p for p in root.iter('physdesc')]
     for physdesc in physdescs:
         children = [node for node in physdesc]
@@ -142,29 +142,53 @@ def apply_transformations(xml_as_bytes):
             ext.text = physdesc.text
             physdesc.text = ''
     
-    # add title attribute to dao tags
+    # [4] add title attribute to dao tags
     for dao in root.iter('dao'):
         parent = dao.getparent()
         unittitle = parent.find('unittitle').text
         if unittitle:
             dao.set('title', unittitle)
         
-    # empty paragraph tags -- regex?
-    # replace special characters -- corrected by encoding fix
+    # [5] empty paragraph tags
+    node_types = ['bioghist', 'processinfo', 'scopecontent']
+    for type in node_types:
+        for instance in root.iter(type):
+            parent = instance.getparent()
+            paragraphs = [node for node in instance if node.tag is 'p']
+            for p in paragraphs:
+                if p.text is not None:
+                    break
+            else:
+                print('Removing: {0}'.format(ET.tostring(instance)))
+                parent.remove(instance)
+    
+    # [6] replace special characters: fixed with correct encoding
     
     # OPTIMIZATION
     #=============
-    # date expressions -- generate report
+    # unitdates: report generated
+    # extents: report generated
     
-    # collection titles
-    title = root.find('titleproper')
-    print(title.text)
+    # get collection titles
+    titleproper = root.find('.//titleproper')
+    
     # if title.text begins with "Guide to", remove it and capitalize next word
+    if titleproper is not None and titleproper.text is not '':
+        titleproper_old = titleproper.text
+        if titleproper_old is not None and titleproper_old.startswith(
+                                                                "Guide to"):
+            titleproper_new = titleproper_old[9].upper() + titleproper_old[10:]
+            print("  {0} => {1}".format(titleproper_old, titleproper_new))
     
-    # dates
-    # extents
     # scope and content notes
-    
+    analyticover = root.xpath('//dsc[@type="analyticover"]')
+    for ac in analyticover:
+        for sc in ac.iter('scopecontent'):
+            paragraphs = [node for node in sc if node.tag is 'p']
+            for p in paragraphs:
+                if p.text is not None:
+                    break # move the content over
+        ac.getparent().remove(ac)
     
     # OPTIONAL
     #=========
@@ -172,29 +196,53 @@ def apply_transformations(xml_as_bytes):
     # handles
     
     
-    # ADDITIONAL QUIRKS
-    #==================
-    # stack locations
-    # language descriptions
-    
-    
-
-    
     return tree
+
 
 #=============================
 # unitdate report generation
 #============================
 def report_dates(root):
     result = []
+    
+    allowed_patterns = [r'^\d{4}$', 
+                        r'^\d{4}-\d{4}$', 
+                        r'^[a-zA-Z]+? \d\d?,? \d{4}$',
+                        r'^[a-zA-Z]+? \d\d?,? \d{4}-[a-zA-Z]+? \d\d?,? \d{4}$']
+    
     unitdates = root.xpath(
         "//archdesc[@level='collection' and @type='combined']/did/unitdate")
+    
     for u in unitdates:
-        
-        result.append(u.text)
+        for p in allowed_patterns:
+            if re.match(p, u.text):
+                # print("{0} matches pattern {1}".format(u.text, p))
+                break
+        else:
+            result.append(u.text)
+    
     return result
+
+
+#=============================
+# extent report generation
+#============================
+def report_extents(root):
+    result = []
     
+    allowed_patterns = [r'^[0-9.]+ linear feet$']
     
+    extents = root.find(".//physdesc")
+    
+    for e in extents:
+        for p in allowed_patterns:
+            if re.match(p, e.text):
+                # print("{0} matches pattern {1}".format(e.text, p))
+                break
+        else:
+            result.append(e.text)
+    
+    return result
 
 
 #================
@@ -206,6 +254,7 @@ def main():
     print("\n".join(['', border, "| EAD Transformer |", border]))
     errors = []
     dates = []
+    extents = []
     
     # get files from inpath
     if args.input:
@@ -276,8 +325,15 @@ def main():
             print("  Applying XML transformations...")
             try:
                 ead_tree = apply_transformations(ead_string.encode('utf-8'))
-                d = report_dates(ead_tree)
-                dates.extend(report_dates(ead_tree))
+                
+                bad_dates = report_dates(ead_tree)
+                for date in bad_dates:
+                    dates.append('{0},"{1}"'.format(f, date))
+                
+                bad_extents = report_extents(ead_tree)
+                for extent in bad_extents:
+                    extents.append('{0},"{1}"'.format(f, extent))
+                    
             except ET.ParseError as e:
                 print("  {0} is malformed; error code {1} ({2}) at {3})".format(
                     f, e.code, xerr.ErrorString(e.code), e.position))
@@ -294,8 +350,12 @@ def main():
             errfile.writelines("\n".join(errors))
     
     if dates:
-        with open('unitdates.txt', 'w') as datesfile:   
+        with open('unitdates_report.csv', 'w') as datesfile:   
             datesfile.writelines("\n".join(dates))
+    
+    if extents:
+        with open('extents_report.csv', 'w') as extentsfile:   
+            extentsfile.writelines("\n".join(extents))
 
 if __name__ == '__main__':
     main()
