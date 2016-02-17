@@ -56,5 +56,10 @@ docs/_build/
 # PyBuilder
 target/
 
-# user data
-ead/
+# Mac Stuff
+.DS_Store
+
+# default locations for input, output, and reports
+data/output/*
+data/input/*
+data/reports/*
