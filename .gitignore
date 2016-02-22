@@ -59,7 +59,3 @@ target/
 # Mac stuff
 .DS_Store
 
-# user data
-data/output/*
-data/input/*
-data/reports/*

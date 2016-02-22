@@ -156,7 +156,7 @@ def apply_transformations(xml_as_bytes):
             parent = instance.getparent()
             paragraphs = [node for node in instance if node.tag is 'p']
             for p in paragraphs:
-                if p.text is not None:
+                if len(p) == 0 and p.text is not None:
                     break
             else:
                 print('Removing: {0}'.format(ET.tostring(instance)))
@@ -171,7 +171,6 @@ def apply_transformations(xml_as_bytes):
     
     # get collection titles
     titleproper = root.find('.//titleproper')
-    
     # if title.text begins with "Guide to", remove it and capitalize next word
     if titleproper is not None and titleproper.text is not '':
         titleproper_old = titleproper.text
