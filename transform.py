@@ -74,7 +74,8 @@ def load_transformations(transform_file):
         return json.load(f)
 
 
-#==========================
+
+#=========================
 # get handles from a file
 #=========================
 def load_handles(handle_file):
@@ -273,7 +274,12 @@ def main():
     errors = []
     dates = []
     extents = []
+<<<<<<< Updated upstream
     handles = load_handles('ead_handles_rev.csv')
+=======
+    handles = load_handles('ead_handles.csv')
+    
+>>>>>>> Stashed changes
     
     # get files from inpath
     if args.input:
@@ -382,7 +388,7 @@ def main():
             extentsfile.writelines("\n".join(extents))
 
 if __name__ == '__main__':
-    main()
+    # main()
 
 #     handles = load_handles('ead_handles.csv')
 #     dupes = {k:v for k,v in handles.items() if len(v) > 1}
@@ -390,4 +396,3 @@ if __name__ == '__main__':
 #         print("{0}. {1} => {2}".format(n+1, h, handles[h]))
 #     for d in dupes:
 #         print(d, dupes[d])
-
