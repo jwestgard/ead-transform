@@ -209,15 +209,19 @@ def apply_transformations(xml_as_bytes, handle):
         
     # remove multiple abstracts
     abstracts = [a for a in root.iter('abstract')]
-    print("  found {0} abstracts!!".format(len(abstracts)))
+    print("  Found {0} abstracts:".format(len(abstracts)))
     if len(abstracts) > 1:
-        for abstract in abstracts:
-            if abstract['label'] is not 'Short Description of Collection':
-                print
-            for attrib, value in abstract.items():
-                print(attrib, value)
+        for abstract_num, abstract in enumerate(abstracts):
+            label = abstract.get('label')
+            if label == "Short Description of Collection":
+                print("    {0}. Keeping Short Description".format(
+                                                    abstract_num +1))
+            else:
+                print("    {0}. Removing abstract '{1}'...".format(
+                                                    abstract_num + 1, label))
+                abstract.getparent().remove(abstract)
     else:
-        print("There is only one abstract.")
+        print("  There is only one abstract.")
     
     # OPTIONAL
     #=========
