@@ -180,7 +180,7 @@ def apply_transformations(xml_as_bytes, handle):
                 print('Removing: {0}'.format(ET.tostring(instance)))
                 parent.remove(instance)
     
-    # [6] replace special characters: fixed with correct encoding
+    # [6] replace special characters: fixed by getting correct encoding
     
     # OPTIMIZATION
     #=============
@@ -206,6 +206,18 @@ def apply_transformations(xml_as_bytes, handle):
                 if p.text is not None:
                     break # move the content over
         ac.getparent().remove(ac)
+        
+    # remove multiple abstracts
+    abstracts = [a for a in root.iter('abstract')]
+    print("  found {0} abstracts!!".format(len(abstracts)))
+    if len(abstracts) > 1:
+        for abstract in abstracts:
+            if abstract['label'] is not 'Short Description of Collection':
+                print
+            for attrib, value in abstract.items():
+                print(attrib, value)
+    else:
+        print("There is only one abstract.")
     
     # OPTIONAL
     #=========
@@ -274,13 +286,8 @@ def main():
     errors = []
     dates = []
     extents = []
-<<<<<<< Updated upstream
     handles = load_handles('ead_handles_rev.csv')
-=======
-    handles = load_handles('ead_handles.csv')
-    
->>>>>>> Stashed changes
-    
+
     # get files from inpath
     if args.input:
         input_dir = args.input
@@ -388,7 +395,7 @@ def main():
             extentsfile.writelines("\n".join(extents))
 
 if __name__ == '__main__':
-    # main()
+    main()
 
 #     handles = load_handles('ead_handles.csv')
 #     dupes = {k:v for k,v in handles.items() if len(v) > 1}
