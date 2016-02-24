@@ -273,7 +273,7 @@ def main():
     errors = []
     dates = []
     extents = []
-    handles = load_handles('ead_handles.csv')
+    handles = load_handles('ead_handles_rev.csv')
     
     # get files from inpath
     if args.input:
