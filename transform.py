@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import codecs
+import csv
 import json
 import os
 import re
@@ -73,6 +74,22 @@ def load_transformations(transform_file):
         return json.load(f)
 
 
+#==========================
+# get handles from a file
+#=========================
+def load_handles(handle_file):
+    result = {}
+    with open(handle_file, "r") as f:
+        for line in csv.DictReader(f):
+            id = line['identifier']
+            handle = line['handlehttp']
+            if id not in result:
+                result[id] = handle
+            else:
+                pass
+        return result
+
+
 #==================================
 # apply an individual find/replace
 #==================================
@@ -94,7 +111,7 @@ def apply_regexes(text, transformations):
 #=================================================
 # apply the xml transformations to the input file
 #=================================================
-def apply_transformations(xml_as_bytes):
+def apply_transformations(xml_as_bytes, handle):
     file_like_obj = BytesIO(xml_as_bytes)
     tree = ET.parse(file_like_obj)
     root = tree.getroot()
@@ -192,8 +209,10 @@ def apply_transformations(xml_as_bytes):
     # OPTIONAL
     #=========
     # accession numbers
+
     # handles
-    
+    eadid = root.find('.//eadid')
+    eadid.set('url', handle)
     
     return tree
 
@@ -254,6 +273,7 @@ def main():
     errors = []
     dates = []
     extents = []
+    handles = load_handles('ead_handles.csv')
     
     # get files from inpath
     if args.input:
@@ -323,7 +343,12 @@ def main():
             # other transformations
             print("  Applying XML transformations...")
             try:
-                ead_tree = apply_transformations(ead_string.encode('utf-8'))
+                try: 
+                    handle = handles[os.path.basename(f)]
+                except KeyError:
+                    handle = ''
+                ead_tree = apply_transformations(ead_string.encode('utf-8'),
+                                                    handle)
                 
                 bad_dates = report_dates(ead_tree)
                 for date in bad_dates:
@@ -345,17 +370,24 @@ def main():
     
     # write out error log if any errors occurred
     if errors:
-        with open('errors.txt', 'w') as errfile:
+        with open('data/reports/errors.txt', 'w') as errfile:
             errfile.writelines("\n".join(errors))
     
     if dates:
-        with open('unitdates_report.csv', 'w') as datesfile:   
+        with open('data/reports/unitdates_report.csv', 'w') as datesfile:   
             datesfile.writelines("\n".join(dates))
     
     if extents:
-        with open('extents_report.csv', 'w') as extentsfile:   
+        with open('data/reports/extents_report.csv', 'w') as extentsfile:   
             extentsfile.writelines("\n".join(extents))
 
 if __name__ == '__main__':
     main()
+
+#     handles = load_handles('ead_handles.csv')
+#     dupes = {k:v for k,v in handles.items() if len(v) > 1}
+#     for n,h in enumerate(handles):
+#         print("{0}. {1} => {2}".format(n+1, h, handles[h]))
+#     for d in dupes:
+#         print(d, dupes[d])
 
