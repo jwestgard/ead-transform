@@ -2,12 +2,13 @@
 import argparse
 import codecs
 import csv
+from io import BytesIO
 import json
+import logging
+import lxml.etree as ET
 import os
 import re
-from io import BytesIO
 import sys
-import lxml.etree as ET
 import xml.parsers.expat as xerr
 
 
@@ -139,7 +140,6 @@ def apply_transformations(xml_as_bytes, handle):
     file_like_obj = BytesIO(xml_as_bytes)
     tree = ET.parse(file_like_obj)
     root = tree.getroot()
-    deletions = []
     
     
     # REQUIRED
@@ -211,9 +211,9 @@ def apply_transformations(xml_as_bytes, handle):
     node_types = ['bioghist', 'processinfo', 'scopecontent']
     
     # check each of the three elements above
-    for type in node_types:
+    for node_type in node_types:
 
-        for instance in root.iter(type):
+        for instance in root.iter(node_type):
             parent = instance.getparent()
 
             # find all the paragraphs in the node
@@ -221,13 +221,13 @@ def apply_transformations(xml_as_bytes, handle):
 
             # if any contain text, break the loop
             for p in paragraphs:
-                if len(p) == 0 and p.text is not None:
+                if len(p) > 0 or p.text is not None:
                     break
                     
             # otherwise remove the parent element
             else:
                 print('    - removing {0} because empty'.format(instance))
-                deletions.append(ET.tostring(instance))
+                logging.info(ET.tostring(instance))
                 parent.remove(instance)
     
     # [6] replace special characters: fixed by getting correct encoding
@@ -302,7 +302,7 @@ def apply_transformations(xml_as_bytes, handle):
 
     eadid.set('url', handle)
     
-    return tree, deletions
+    return tree
 
 
 #=============================
@@ -368,7 +368,11 @@ def main():
     extents = []
     deletions = {}
     handles = load_handles('ead_handles_rev.csv')
-
+    
+    # set up message logging to record actions on files
+    logging.basicConfig(
+        filename='data/reports/transform.log', level=logging.INFO)
+    
     # get files from inpath
     if args.input:
         input_dir = args.input
@@ -450,9 +454,8 @@ def main():
                 except KeyError:
                     handle = ''
 
-                ead_tree, d = apply_transformations(ead_string.encode('utf-8'),
+                ead_tree = apply_transformations(ead_string.encode('utf-8'),
                                                     handle)
-                deletions[f] = d
                 bad_dates = report_dates(ead_tree)
 
                 for date in bad_dates:
@@ -486,12 +489,6 @@ def main():
     if extents:
         with open('data/reports/extents_report.csv', 'w') as extentsfile:   
             extentsfile.writelines("\n".join(extents))
-            
-    if deletions:
-        with open('data/reports/log.txt', 'w') as deletionsfile:
-            for d in deletions:
-                deletionsfile.write("\n{0}".format(d))
-                deletionsfile.write("\n".join(deletions[d]))
 
 if __name__ == '__main__':
     main()
