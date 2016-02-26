@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# -*- coding: utf8 -*-
+
 import argparse
 import codecs
 import csv
@@ -12,42 +14,12 @@ import sys
 import xml.parsers.expat as xerr
 
 
-#==============================
-# parse command line arguments
-#==============================
-def get_arguments():
-    parser = argparse.ArgumentParser(description='Process and validate EAD.')
-
-    parser.add_argument('-e', '--encoding', action='store_true',
-        help='check encoding only of files in input path')
-
-    parser.add_argument('-i', '--input', 
-        help='input path of files to be transformed')
-
-    parser.add_argument('-o', '--output', required=True,
-        help='ouput path for transformed files')
-
-    parser.add_argument('-r', '--resume', action='store_true', 
-        help='resume job, skipping files that already exist in outpath')
-
-    parser.add_argument('-R', '--recursive', action='store_true', 
-        help='recursively process files starting at rootdirectory')
-
-    parser.add_argument('-t', '--transform', 
-        help="file containing regex transformations to apply")
-
-    parser.add_argument('files', nargs='*', help='files to check')
-
-    return parser.parse_args()
-
-
 #========================================
 # get list of EAD files (input or output)
 #========================================
 def get_files_in_path(rootdir, recursive):
-
     result = []
-
+    
     if recursive is True:
         print('Traversing recursively...')
         for (root, dir, files) in os.walk(rootdir):
@@ -67,7 +39,6 @@ def get_files_in_path(rootdir, recursive):
 # verify file encoding and return unicode string
 #================================================
 def verified_decode(f):
-
     encodings = ['ascii', 'utf-8', 'windows-1252', 'latin-1']
     print("  Checking encoding...")
 
@@ -83,165 +54,120 @@ def verified_decode(f):
     return False
 
 
-#=================================
-# get list of regexes from a file
-#=================================
-def load_transformations(transform_file):
-    with open(transform_file, "r") as f:
-        return json.load(f)
-
-
 #=========================
 # get handles from a file
 #=========================
 def load_handles(handle_file):
-
     result = {}
-    
     with open(handle_file, "r") as f:
-
         for line in csv.DictReader(f):
             id = line['identifier']
             handle = line['handlehttp']
             if id not in result:
                 result[id] = handle
-            else:
-                pass
-
-        return result
+    return result
 
 
-#==================================
-# apply an individual find/replace
-#==================================
-def replace(match, replacement, text):
-    return re.sub(match, replacement, text)
-
-
-#==============================================
-# apply the batch of regexes to the input file
-#==============================================
-def apply_regexes(text, transformations):
-
-    for t in transformations:
-        print(t['description'])
-        match = t['pattern']
-        replacement = t['replacement']
-
-    return re.sub(match, replacement, text)
-
-
-#=================================================
-# apply the xml transformations to the input file
-#=================================================
-def apply_transformations(xml_as_bytes, handle):
-
-    # in order to parse string as XML, create file-like object and parse it
-    file_like_obj = BytesIO(xml_as_bytes)
-    tree = ET.parse(file_like_obj)
-    root = tree.getroot()
-    
-    
-    # REQUIRED
-    #=========
-
-    # [1] <container> tags
-    
-    # iterate over item- and file-level containers
-    file_item_level_dids = [d for d in root.iter('did') if d.getparent().get(
-        'level') in ['file', 'item']]
-    
-    for did in file_item_level_dids:
-        container_types = [c.get('type') for c in did if c.tag == 'container']
-
-        # check whether a box-level container is present in the did
-        if 'box' not in container_types:
-            print("    - adding box-level container to {0}".format(did))
-            existing_container = did.find('container/[@parent]')
-            box_attribute = existing_container.get('parent')
-            m = re.search(r'^(box)?(\d+).(\d+)$', box_attribute)
-            
-            # create the attributes corresponding to the parent box container
-            if m:
-                box_number = m.group(2)
-                box_id = "{0}.{1}".format(m.group(2), m.group(3))
-                new_container = ET.SubElement(did, "container")
-                new_container.set('type', 'box')
-                new_container.set('id', box_id)
-                new_container.text = box_number
-            
-    # [2] incorrect box numbers
+#============================
+# fix incorrect box numbers
+#===========================
+def fix_box_number_discrepancies(root):
     boxes = [c for c in root.iter('container') if c.get('type') == 'box']
-
     for box in boxes:
-        id = box.get('id')
+        match = re.search(r'^(box)?(\d+).\d+$', box.get('id'))
+        if box.text != match.group(2):
+            box.text = match.group(2)
+            logging.info('Corrected box {0} to {1}'.format(
+                ET.tostring(box), match.group(2)))
+    return root
 
-        if id:
-            m = re.search(r'^(box)?(\d+).\d+$', id)
-            if m:
-                if box.text != m.group(2):
-                    print(
-                        "    - changing {0} to {1} based on {2}".format(
-                                                box.text, m.group(2), id))
-                    box.text = m.group(2)
+
+#=================================
+# add box containers where absent
+#=================================
+def add_missing_box_containers(root):
+    # iterate over item- and file-level containers
+    for n, did in enumerate(root.iter('did')):
+        print(n, ET.tostring(did))
+        parent = did.getparent()
+        parent_level = parent.get('level')
+
+        if parent_level in ['file', 'item']:
+            # check whether a box container exists already; if so, break out
+            for c in did.iterchildren(tag='container'):
+                if c.get('type') == 'box':
+                    break
+            # if not, create a box container
             else:
-                pass
-    
-    # [3] extent tags
-    physdescs = [p for p in root.iter('physdesc')]
+                box_attribute = c.get('parent')
+                print(box_attribute)
+                match = re.search(r'^(box)?(\d+).(\d+)$', box_attribute)
 
-    for physdesc in physdescs:
-        children = [node for node in physdesc]
+                # create attributes corresponding to the parent box
+                if match:
+                    box_number = match.group(2)
+                    box_id = "{0}.{1}".format(match.group(2), match.group(3))
+                    new_container = ET.SubElement(did, "container")
+                    new_container.set('type', 'box')
+                    new_container.set('id', box_id)
+                    new_container.text = box_number
+                    
+    return root
+
+
+#======================================
+# missing extents in physdesc elements
+#======================================
+def add_missing_extents(root):
+    for physdesc in root.findall('physdesc'):
+        children = physdesc.getchildren()
         if "extent" not in children:
-            print('    - wrapping extent in missing extent element')
             ext = ET.SubElement(physdesc, "extent")
             ext.text = physdesc.text
             physdesc.text = ''
-    
-    # [4] add title attribute to dao tags
-    for dao in root.iter('dao'):
+            logging.info('Added missing extent element to {0}'.format(physdesc))
+
+
+#=============================
+# add title attribute to dao
+#=============================
+def add_title_to_dao(root):
+    for dao in root.findall('dao'):
         parent = dao.getparent()
         unittitle = parent.find('unittitle').text
-
         if unittitle:
-            print('    - adding title attribute to dao element')
             dao.set('title', unittitle)
-        
-    # [5] empty paragraph tags
+        else:
+            print('cannot find unittitle for dao element')
+
+
+#==================================================
+# remove elements containing only empty paragraphs
+#==================================================
+def remove_empty_elements(root):
     node_types = ['bioghist', 'processinfo', 'scopecontent']
-    
-    # check each of the three elements above
+    # check for each of the three elements above
     for node_type in node_types:
-
-        for instance in root.iter(node_type):
-            parent = instance.getparent()
-
+        # iterate over instances of the element
+        for node in root.findall(node_type):
+            parent = node.getparent()
             # find all the paragraphs in the node
-            paragraphs = [node for node in instance if node.tag is 'p']
-
+            paragraphs = node.findall('p')
             # if any contain text, break the loop
             for p in paragraphs:
                 if len(p) > 0 or p.text is not None:
                     break
-                    
             # otherwise remove the parent element
             else:
-                print('    - removing {0} because empty'.format(instance))
                 logging.info(ET.tostring(instance))
                 parent.remove(instance)
-    
-    # [6] replace special characters: fixed by getting correct encoding
-    
-    
-    # OPTIMIZATION
-    #=============
 
-    # unitdates: report generated
-    # extents: report generated
-    
-    # get collection titles
-    titleproper = root.find('.//titleproper')
 
+#==============================
+# Remove "Guide to" from title
+#==============================
+def remove_guide_to_from_title(root):
+    titleproper = root.find('titleproper')
     # if title.text begins with "Guide to", remove it and capitalize next word
     if titleproper is not None and titleproper.text is not '':
         titleproper_old = titleproper.text
@@ -259,7 +185,11 @@ def apply_transformations(xml_as_bytes, handle):
                 old_t = titleproper_old
                 
             print("  Altered title: {0} => {1}".format(old_t, new_t))
-    
+
+
+#=================================================
+# 
+#=================================================
     # scope and content notes
     analyticover = root.xpath('//dsc[@type="analyticover"]')
 
@@ -272,7 +202,11 @@ def apply_transformations(xml_as_bytes, handle):
                     break # move the content over
 
         ac.getparent().remove(ac)
-        
+
+
+#=================================================
+# 
+#=================================================
     # remove multiple abstracts
     abstracts = [a for a in root.iter('abstract')]
 
@@ -292,17 +226,14 @@ def apply_transformations(xml_as_bytes, handle):
     else:
         print("  There is only one abstract.")
     
-    
-    # OPTIONAL
-    #=========
-    # accession numbers
 
-    # handles
+#=================================================
+# 
+#=================================================
     eadid = root.find('.//eadid')
 
     eadid.set('url', handle)
-    
-    return tree
+
 
 
 #=============================
@@ -356,11 +287,24 @@ def report_extents(root):
     return result
 
 
+#=================================================
+# apply the xml transformations to the input file
+#=================================================
+def clean_ead(xml_as_bytes):
+    # in order to parse string as XML, create file-like object and parse it
+    file_like_obj = BytesIO(xml_as_bytes)
+    tree = ET.parse(file_like_obj)
+    root = tree.getroot()
+    
+    root = add_missing_box_containers(root)
+    root = fix_box_number_discrepancies(root)
+    root = add_missing_extents(root)
+
+
 #================
 #  main function
 #================
-def main():
-    args = get_arguments()
+def main(args):
     border = "=" * 19
     print("\n".join(['', border, "| EAD Transformer |", border]))
     errors = []
@@ -371,7 +315,9 @@ def main():
     
     # set up message logging to record actions on files
     logging.basicConfig(
-        filename='data/reports/transform.log', level=logging.INFO)
+        filename='data/reports/transform.log', 
+        filemode='w', 
+        level=logging.INFO)
     
     # get files from inpath
     if args.input:
@@ -391,11 +337,6 @@ def main():
     # notify that resume flag is set
     if args.resume:
         print("Resume flag (-r) is set, will skip existing files")
-    
-    # if transform flag is set, load json transform file
-    if args.transform:
-        print("Loading regex transformations from file ...")
-        transformations = load_transformations(args.transform)
     
     # notify that encoding-check-only flag is set
     if args.encoding is True:
@@ -432,19 +373,11 @@ def main():
             continue
 
         if args.encoding is True:
-
             # skip rest of loop if encoding-only flag is set and write file
             with open(output_path, 'w') as outfile:
                 outfile.write(ead_string)
-
             continue
-
         else:
-            if args.transform is True:
-                # regex transformations
-                print("  Applying regexes from file...")
-                ead_string = apply_regexes(ead, transformations)
-            
             # other transformations
             print("  Applying XML transformations...")
 
@@ -454,8 +387,7 @@ def main():
                 except KeyError:
                     handle = ''
 
-                ead_tree = apply_transformations(ead_string.encode('utf-8'),
-                                                    handle)
+                ead_tree = clean_ead(ead_string.encode('utf-8'), handle)
                 bad_dates = report_dates(ead_tree)
 
                 for date in bad_dates:
@@ -490,8 +422,27 @@ def main():
         with open('data/reports/extents_report.csv', 'w') as extentsfile:   
             extentsfile.writelines("\n".join(extents))
 
+
+#==============================
+# parse command line arguments
+#==============================
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description='Process and validate EAD.')
+    parser.add_argument('-e', '--encoding', action='store_true',
+        help='check encoding only of files in input path')
+    parser.add_argument('-i', '--input', 
+        help='input path of files to be transformed')
+    parser.add_argument('-o', '--output', required=True,
+        help='ouput path for transformed files')
+    parser.add_argument('-r', '--resume', action='store_true', 
+        help='resume job, skipping files that already exist in outpath')
+    parser.add_argument('-R', '--recursive', action='store_true', 
+        help='recursively process files starting at rootdirectory')
+    parser.add_argument('files', nargs='*', help='files to check')
+
+    args = parser.parse_args()
+
+    main(args)
 
 #     handles = load_handles('ead_handles.csv')
 #     dupes = {k:v for k,v in handles.items() if len(v) > 1}
