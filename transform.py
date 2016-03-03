@@ -83,12 +83,11 @@ def fix_box_number_discrepancies(root):
 
 
 #=================================
-# add box containers where absent
+# Add box containers where absent
 #=================================
 def add_missing_box_containers(root):
     # iterate over item- and file-level containers
     for n, did in enumerate(root.iter('did')):
-        print(n, ET.tostring(did))
         parent = did.getparent()
         parent_level = parent.get('level')
 
@@ -100,7 +99,6 @@ def add_missing_box_containers(root):
             # if not, create a box container
             else:
                 box_attribute = c.get('parent')
-                print(box_attribute)
                 match = re.search(r'^(box)?(\d+).(\d+)$', box_attribute)
 
                 # create attributes corresponding to the parent box
@@ -116,7 +114,7 @@ def add_missing_box_containers(root):
 
 
 #======================================
-# missing extents in physdesc elements
+# Missing extents in physdesc elements
 #======================================
 def add_missing_extents(root):
     for physdesc in root.findall('physdesc'):
@@ -126,10 +124,10 @@ def add_missing_extents(root):
             ext.text = physdesc.text
             physdesc.text = ''
             logging.info('Added missing extent element to {0}'.format(physdesc))
-
+    return root
 
 #=============================
-# add title attribute to dao
+# Add title attribute to dao
 #=============================
 def add_title_to_dao(root):
     for dao in root.findall('dao'):
@@ -138,11 +136,12 @@ def add_title_to_dao(root):
         if unittitle:
             dao.set('title', unittitle)
         else:
-            print('cannot find unittitle for dao element')
+            logging.warn('Cannot find unittitle for dao element')
+    return root
 
 
 #==================================================
-# remove elements containing only empty paragraphs
+# Remove elements containing only empty paragraphs
 #==================================================
 def remove_empty_elements(root):
     node_types = ['bioghist', 'processinfo', 'scopecontent']
@@ -161,12 +160,13 @@ def remove_empty_elements(root):
             else:
                 logging.info(ET.tostring(instance))
                 parent.remove(instance)
+    return root
 
 
 #==============================
 # Remove "Guide to" from title
 #==============================
-def remove_guide_to_from_title(root):
+def remove_opening_of_title(root):
     titleproper = root.find('titleproper')
     # if title.text begins with "Guide to", remove it and capitalize next word
     if titleproper is not None and titleproper.text is not '':
@@ -186,13 +186,16 @@ def remove_guide_to_from_title(root):
                 
             print("  Altered title: {0} => {1}".format(old_t, new_t))
 
+    return root
 
-#=================================================
-# 
-#=================================================
-    # scope and content notes
+
+#======================================================
+# Move scope and content section from analytic cover to 
+#======================================================
+def move_scopecontent(root):
     analyticover = root.xpath('//dsc[@type="analyticover"]')
-
+    
+    # iterate over scope and content notes inside analytic cover section
     for ac in analyticover:
         for sc in ac.iter('scopecontent'):
             paragraphs = [node for node in sc if node.tag is 'p']
@@ -203,11 +206,13 @@ def remove_guide_to_from_title(root):
 
         ac.getparent().remove(ac)
 
+    return root
+
 
 #=================================================
-# 
+# Remove alternative abstracts used for ArchivesUM
 #=================================================
-    # remove multiple abstracts
+def remove_multiple_abstracts(root):
     abstracts = [a for a in root.iter('abstract')]
 
     print("  Found {0} abstracts:".format(len(abstracts)))
@@ -225,19 +230,49 @@ def remove_guide_to_from_title(root):
                 abstract.getparent().remove(abstract)
     else:
         print("  There is only one abstract.")
-    
+        
+    return root
+
 
 #=================================================
-# 
+# Add handle uri as an attribute of the eadid elem
 #=================================================
+def insert_handle(root, handle):
     eadid = root.find('.//eadid')
-
     eadid.set('url', handle)
+    return root
 
+
+#=================================================
+# Apply the xml transformations to the input file
+#=================================================
+def transform_ead(xml_as_bytes, handle):
+
+    # in order to parse string as XML, create file-like object and parse it
+    file_like_obj = BytesIO(xml_as_bytes)
+    tree = ET.parse(file_like_obj)
+    root = tree.getroot()
+
+    # add missing elements
+    root = add_missing_box_containers(root)
+    root = add_missing_extents(root)
+    root = insert_handle(root, handle)
+    root = add_title_to_dao(root)
+    
+    # fix errors and rearrange
+    root = fix_box_number_discrepancies(root)
+    root = move_scopecontent(root)
+
+    # remove duplicate, empty, and unneeded elements
+    root = remove_multiple_abstracts(root)
+    root = remove_empty_elements(root)
+    root = remove_opening_of_title(root)
+    
+    return tree
 
 
 #=============================
-# unitdate report generation
+# Unitdate report generation
 #============================
 def report_dates(root):
     result = []
@@ -259,7 +294,7 @@ def report_dates(root):
         for p in allowed_patterns:
             if re.match(p, u.text):
                 # print("{0} matches pattern {1}".format(u.text, p))
-                break
+                continue
         else:
             result.append(u.text)
     
@@ -267,13 +302,11 @@ def report_dates(root):
 
 
 #=============================
-# extent report generation
+# Extent report generation
 #============================
 def report_extents(root):
     result = []
-    
     allowed_patterns = [r'^[0-9.]+ linear feet$']
-    
     extents = root.find(".//physdesc")
     
     for e in extents:
@@ -287,61 +320,14 @@ def report_extents(root):
     return result
 
 
-#=================================================
-# apply the xml transformations to the input file
-#=================================================
-def clean_ead(xml_as_bytes):
-    # in order to parse string as XML, create file-like object and parse it
-    file_like_obj = BytesIO(xml_as_bytes)
-    tree = ET.parse(file_like_obj)
-    root = tree.getroot()
-    
-    root = add_missing_box_containers(root)
-    root = fix_box_number_discrepancies(root)
-    root = add_missing_extents(root)
-
-
 #================
-#  main function
+# Main function
 #================
-def main(args):
-    border = "=" * 19
-    print("\n".join(['', border, "| EAD Transformer |", border]))
-    errors = []
+def foobar(files_to_check):
     dates = []
     extents = []
-    deletions = {}
     handles = load_handles('ead_handles_rev.csv')
     
-    # set up message logging to record actions on files
-    logging.basicConfig(
-        filename='data/reports/transform.log', 
-        filemode='w', 
-        level=logging.INFO)
-    
-    # get files from inpath
-    if args.input:
-        input_dir = args.input
-        print("Checking files in folder '{0}'...".format(input_dir))
-        files_to_check = get_files_in_path(input_dir, recursive=args.recursive)
-    # otherwise, use arguments for files to check
-    else:
-        input_dir = os.path.dirname(args.files[0])
-        print(
-            "No input path specified; processing files from arguments...")
-        files_to_check = [f for f in args.files]
-        print(files_to_check)
-    # set path for output
-    output_dir = args.output
-    
-    # notify that resume flag is set
-    if args.resume:
-        print("Resume flag (-r) is set, will skip existing files")
-    
-    # notify that encoding-check-only flag is set
-    if args.encoding is True:
-        print("Encoding flag (-e) flag is set, will check encoding only...")
-
     # loop and process each file
     for n, f in enumerate(files_to_check):
 
@@ -369,7 +355,7 @@ def main(args):
 
         if not ead_string:
             print("  Could not reliably decode file, skipping...".format(f))
-            errors.append("{0} could not be decoded.".format(f))
+            logging.error("{0} could not be decoded.".format(f))
             continue
 
         if args.encoding is True:
@@ -387,7 +373,7 @@ def main(args):
                 except KeyError:
                     handle = ''
 
-                ead_tree = clean_ead(ead_string.encode('utf-8'), handle)
+                ead_tree = transform_ead(ead_string.encode('utf-8'), handle)
                 bad_dates = report_dates(ead_tree)
 
                 for date in bad_dates:
@@ -402,31 +388,36 @@ def main(args):
                 print("  {0} is malformed; error code {1} ({2}) at {3})".format(
                     f, e.code, xerr.ErrorString(e.code), e.position))
 
-                errors.append(
+                logging.error(
                     "{0} is malformed; error code {1} ({2}) at {3})".format(
                         f, e.code, xerr.ErrorString(e.code), e.position))
             
             # write out result
             ead_tree.write(output_path)
     
-    # write out error log if any errors occurred
-    if errors:
-        with open('data/reports/errors.txt', 'w') as errfile:
-            errfile.writelines("\n".join(errors))
-    
+    # write out reports
     if dates:
-        with open('data/reports/unitdates_report.csv', 'w') as datesfile:   
+        with open('data/reports/unitdates_report.csv', 'w') as datesfile:
             datesfile.writelines("\n".join(dates))
     
     if extents:
-        with open('data/reports/extents_report.csv', 'w') as extentsfile:   
+        with open('data/reports/extents_report.csv', 'w') as extentsfile:
             extentsfile.writelines("\n".join(extents))
 
 
-#==============================
-# parse command line arguments
-#==============================
-if __name__ == '__main__':
+#===============================================
+# Parse command line arguments and run main loop
+#===============================================
+def main():
+    border = "=" * 19
+    print("\n".join(['', border, "| EAD Transformer |", border]))
+    
+    # set up message logging to record actions on files
+    logging.basicConfig(
+        filename='data/reports/transform.log', 
+        filemode='w', 
+        level=logging.INFO)
+    
     parser = argparse.ArgumentParser(description='Process and validate EAD.')
     parser.add_argument('-e', '--encoding', action='store_true',
         help='check encoding only of files in input path')
@@ -441,12 +432,32 @@ if __name__ == '__main__':
     parser.add_argument('files', nargs='*', help='files to check')
 
     args = parser.parse_args()
+    
+    # get files from inpath
+    if args.input:
+        input_dir = args.input
+        print("Checking files in folder '{0}'...".format(input_dir))
+        files_to_check = get_files_in_path(input_dir, recursive=args.recursive)
 
-    main(args)
+    # otherwise, use arguments for files to check
+    else:
+        input_dir = os.path.dirname(args.files[0])
+        print(
+            "No input path specified; processing files from arguments...")
+        files_to_check = [f for f in args.files]
+        print(files_to_check)
+        
+    # set path for output
+    output_dir = args.output
+    
+    # notify that resume flag is set
+    if args.resume:
+        print("Resume flag (-r) is set, will skip existing files")
+    
+    # notify that encoding-check-only flag is set
+    if args.encoding is True:
+        print("Encoding flag (-e) flag is set, will check encoding only...")
 
-#     handles = load_handles('ead_handles.csv')
-#     dupes = {k:v for k,v in handles.items() if len(v) > 1}
-#     for n,h in enumerate(handles):
-#         print("{0}. {1} => {2}".format(n+1, h, handles[h]))
-#     for d in dupes:
-#         print(d, dupes[d])
+
+if __name__ == '__main__':
+    main()
