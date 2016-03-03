@@ -13,6 +13,8 @@ import re
 import sys
 import xml.parsers.expat as xerr
 
+from classes.py import ead
+
 
 #========================================
 # get list of EAD files (input or output)
