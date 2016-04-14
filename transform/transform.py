@@ -19,7 +19,7 @@ encodings = ['ascii', 'utf-8', 'windows-1252', 'latin-1']
 
 
 #========================================
-# get list of EAD files (input or output)
+# Get list of EAD files (input or output)
 #========================================
 def get_files_in_path(rootdir, recursive):
     result = []
@@ -39,10 +39,10 @@ def get_files_in_path(rootdir, recursive):
     return result
 
 
-#================================================
-# verify file encoding and return unicode string
-#================================================
-def verified_decode(f, encodings):
+#====================================================
+# Verify file decoding and return utf8-encoded bytes
+#====================================================
+def verify_decoding(f, encodings):
     print("  Checking encoding...")
 
     for encoding in encodings:
@@ -50,7 +50,7 @@ def verified_decode(f, encodings):
         try:
             b = bytes.read()
             print('    - {0} OK.'.format(encoding))
-            return b
+            return b.encode('utf8')
         except UnicodeDecodeError:
             print('    - {0} Error!'.format(encoding))
 
@@ -58,7 +58,7 @@ def verified_decode(f, encodings):
 
 
 #=========================
-# get handles from a file
+# Load handles from a file
 #=========================
 def load_handles(handle_file):
     result = {}
@@ -107,9 +107,11 @@ def main():
     reading all the files in the specified path, attempting to decode from
     various encodings, applying transrormations, and writing out both files and
     reports.'''
+    
+    # user greeting
     border = "=" * 19
     print("\n".join(['', border, "| EAD Transformer |", border]))
-    handles = load_handles('lib/ead_handles_rev.csv')
+    handles = load_handles('config/ead_handles_rev.csv')
     
     # set up message logging to record actions on files
     logging.basicConfig(
@@ -117,6 +119,10 @@ def main():
         filemode='w', 
         level=logging.INFO)
     
+    
+    #-----------------------------
+    # Parse command line arguments
+    #-----------------------------
     parser = argparse.ArgumentParser(description='Process and validate EAD.')
     parser.add_argument('-e', '--encoding', action='store_true',
         help='check encoding only of files in input path')
@@ -128,17 +134,31 @@ def main():
         help='resume job, skipping files that already exist in outpath')
     parser.add_argument('-R', '--recursive', action='store_true', 
         help='recursively process files starting at rootdirectory')
-    parser.add_argument('files', nargs='*', help='files to check')
-
+    parser.add_argument('-v', '--validate', action='store_true',
+        help='validate that xml is well formed')
+    parser.add_argument('-s', '--schema', 
+        help='XSD to validate against')
+    parser.add_argument('files', nargs='*', 
+        help='files to check')
     args = parser.parse_args()
     
     # notify that resume flag is set
     if args.resume is True:
         print("Resume flag (-r) is set, will skip existing files")
     
-    # notify that encoding-check-only flag is set
+    # notify that encoding-check flag is set
     if args.encoding is True:
-        print("Encoding flag (-e) flag is set, will check encoding only...")
+        print("Encoding flag (-e) flag is set, checking encoding ...")
+    
+    # notify that validation-check flag is set
+    if args.validate is True:
+        print("Validation flag (-v) flag is set, checking well-formedness ...")
+    
+    # load XSD to validate against
+    if args.schema:
+        schema_xml = ET.parse(args.schema)
+        ead_schema = ET.XMLSchema(schema_xml)
+        ead_parser = ET.XMLParser(schema=ead_schema)
     
     # get files from inpath
     if args.input:
@@ -155,7 +175,10 @@ def main():
     # set path for output
     output_dir = args.output
     
-    # loop and process each file
+    
+    #---------------------------------------
+    # Main loop  for processing each EAD XML
+    #---------------------------------------
     for n, f in enumerate(files_to_check):
         # set up output paths and create directories if needed
         output_path = os.path.join(output_dir, os.path.relpath(f, input_dir))
@@ -175,17 +198,30 @@ def main():
                 continue
         
         # attempt strict decoding of file according to common schemes
-        ead_string = verified_decode(f, encoding)
-
-        if not ead_string:
-            print("  Could not reliably decode file, skipping...".format(f))
+        ead_bytes = verify_decoding(f, encodings)
+        
+        if not ead_bytes:
+            print("  Could not reliably decode {0}, skipping...".format(f))
             logging.error("{0} could not be decoded.".format(f))
             continue
             
         if args.encoding is True:
-            # skip rest of loop if encoding-only flag is set and write file
-            with open(output_path, 'w') as outfile:
-                outfile.write(ead_string)
+            # validate XML and write to file
+            if args.validate is True:
+                file_like_obj = BytesIO(ead_bytes)
+                try:
+                    ead_tree = ET.parse(file_like_obj)
+                    # ead_schema.assertValid(ead_tree)
+                    ead_tree.write(output_path)
+                except:
+                    # logging.error(xmlschema.error_log.last_error)
+                    print("  Could not parse XML in {0}, skipping...".format(f))
+                    logging.error("{0} is malformed XML.".format(f))
+                    
+            # write decoded bytes to file without validation
+            else:
+                with open(output_path, 'wb') as outfile:
+                    outfile.write(ead_bytes)
             continue
         
         else:
@@ -193,6 +229,7 @@ def main():
             # ead_tree = apply_transformations(ead_string)
             # write out result
             ead_tree.write(output_path)
+
 
 if __name__ == '__main__':
     main()
