@@ -71,34 +71,6 @@ def load_handles(handle_file):
     return result
 
 
-#=================================================
-# Apply the xml transformations to the input file
-#=================================================
-def transform_ead(xml_as_bytes, handle):
-
-    # in order to parse string as XML, create file-like object and parse it
-    file_like_obj = BytesIO(xml_as_bytes)
-    tree = ET.parse(file_like_obj)
-    root = tree.getroot()
-
-    # add missing elements
-    root = add_missing_box_containers(root)
-    root = add_missing_extents(root)
-    root = insert_handle(root, handle)
-    root = add_title_to_dao(root)
-    
-    # fix errors and rearrange
-    root = fix_box_number_discrepancies(root)
-    root = move_scopecontent(root)
-
-    # remove duplicate, empty, and unneeded elements
-    root = remove_multiple_abstracts(root)
-    root = remove_empty_elements(root)
-    root = remove_opening_of_title(root)
-    
-    return tree
-
-
 #===============================================================
 # Main function: Parse command line arguments and run main loop
 #===============================================================

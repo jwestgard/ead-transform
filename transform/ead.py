@@ -1,13 +1,58 @@
 import lxml.etree as ET
 
-class ead(object):
+class Ead(object):
     '''Encoded Archival Description object'''
     def __init__(self, id, handle, xmlfile):
         self.name = id
         self.tree = ET.parse(xmlfile)
         self.handle = handle
 
+    #=============================
+    # Add title attribute to dao
+    #=============================
+    def add_title_to_dao(self):
+        for dao in self.tree.findall('dao'):
+            parent = dao.getparent()
+            unittitle = parent.find('unittitle').text
+            if unittitle:
+                dao.set('title', unittitle)
+            else:
+                logging.warn('Cannot find unittitle for dao element')
+        return self
+
+
+
 '''
+
+#=================================================
+# Apply the xml transformations to the input file
+#=================================================
+def transform_ead(xml_as_bytes, handle):
+
+    # in order to parse string as XML, create file-like object and parse it
+    file_like_obj = BytesIO(xml_as_bytes)
+    tree = ET.parse(file_like_obj)
+    root = tree.getroot()
+
+    # add missing elements
+    root = add_missing_box_containers(root)
+    root = add_missing_extents(root)
+    root = insert_handle(root, handle)
+    root = add_title_to_dao(root)
+    
+    # fix errors and rearrange
+    root = fix_box_number_discrepancies(root)
+    root = move_scopecontent(root)
+
+    # remove duplicate, empty, and unneeded elements
+    root = remove_multiple_abstracts(root)
+    root = remove_empty_elements(root)
+    root = remove_opening_of_title(root)
+    
+    return tree
+    
+    
+
     #===========================
     # fix incorrect box numbers
     #===========================
@@ -67,18 +112,7 @@ class ead(object):
         return root
 
 
-    #=============================
-    # Add title attribute to dao
-    #=============================
-    def add_title_to_dao(root):
-        for dao in root.findall('dao'):
-            parent = dao.getparent()
-            unittitle = parent.find('unittitle').text
-            if unittitle:
-                dao.set('title', unittitle)
-            else:
-                logging.warn('Cannot find unittitle for dao element')
-        return root
+
 
 
     #==================================================
