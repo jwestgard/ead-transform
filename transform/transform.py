@@ -13,10 +13,10 @@ import re
 import sys
 import xml.parsers.expat as xerr
 
-from classes import ead
+from ead import Ead as Ead
 
 encodings = ['ascii', 'utf-8', 'windows-1252', 'latin-1']
-
+missing_handles = []
 
 #========================================
 # Get list of EAD files (input or output)
@@ -83,13 +83,15 @@ def main():
     # user greeting
     border = "=" * 19
     print("\n".join(['', border, "| EAD Transformer |", border]))
-    handles = load_handles('config/ead_handles_rev.csv')
+    handles = load_handles('../data/handles.csv')
     
     # set up message logging to record actions on files
-    logging.basicConfig(
-        filename='data/reports/transform.log', 
-        filemode='w', 
-        level=logging.INFO)
+    logger = logging.basicConfig(
+                format='%(asctime)s %(levelname)s %(message)s',
+                filename='../data/reports/transform.log', 
+                filemode='w', 
+                level=logging.INFO
+                )
     
     
     #-----------------------------
@@ -137,6 +139,7 @@ def main():
         input_dir = args.input
         print("Checking files in folder '{0}'...".format(input_dir))
         files_to_check = get_files_in_path(input_dir, recursive=args.recursive)
+
     # otherwise, use arguments for files to check
     else:
         input_dir = os.path.dirname(args.files[0])
@@ -152,8 +155,10 @@ def main():
     # Main loop  for processing each EAD XML
     #---------------------------------------
     for n, f in enumerate(files_to_check):
+    
         # set up output paths and create directories if needed
         output_path = os.path.join(output_dir, os.path.relpath(f, input_dir))
+        basename = os.path.basename(f)
         parent_dir = os.path.dirname(output_path)
         if not os.path.isdir(parent_dir):
             os.makedirs(parent_dir)
@@ -197,11 +202,40 @@ def main():
             continue
         
         else:
-            # apply the transformations here
-            # ead_tree = apply_transformations(ead_string)
-            # write out result
-            ead_tree.write(output_path)
+            if basename in handles.keys():
+                handle = handles[basename]
+            else:
+                missing_handles.append(basename)
+                handle = ''
+            
+            # create an EAD object
+            print("  Parsing XML...")
+            ead = Ead(basename, handle, BytesIO(ead_bytes))
+            
+            # add missing elements
+            ead.add_missing_box_containers()
+            ead.add_missing_extents()
+            ead.insert_handle()
+            ead.add_title_to_dao()
+            
+            # fix errors and rearrange
+            ead.fix_box_number_discrepancies()
+            ead.move_scopecontent()
+            
+            # remove duplicate, empty, and unneeded elements
+            ead.remove_multiple_abstracts()
+            ead.remove_empty_elements()
+            ead.remove_opening_of_title()
 
+            # write out result
+            ead.tree.write(output_path, 
+                           pretty_print=True, 
+                           encoding='utf-8', 
+                           xml_declaration=True
+                           )
+            
+
+    # print(missing_handles)
 
 if __name__ == '__main__':
     main()

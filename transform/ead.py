@@ -1,11 +1,19 @@
+import logging
 import lxml.etree as ET
+import re
 
 class Ead(object):
+
     '''Encoded Archival Description object'''
+
     def __init__(self, id, handle, xmlfile):
         self.name = id
-        self.tree = ET.parse(xmlfile)
+        parser = ET.XMLParser(remove_blank_text=True)
+        self.tree = ET.parse(xmlfile, parser)
         self.handle = handle
+        self.root = self.tree.getroot()
+        self.logger = logging.getLogger("transform.transform")
+
 
     #=============================
     # Add title attribute to dao
@@ -16,63 +24,27 @@ class Ead(object):
             unittitle = parent.find('unittitle').text
             if unittitle:
                 dao.set('title', unittitle)
+                self.logger.info('Added title "{0}" to dao'.format(unittitle))
             else:
-                logging.warn('Cannot find unittitle for dao element')
-        return self
+                self.logger.warn('Cannot find unittitle for dao element')
 
 
-
-'''
-
-#=================================================
-# Apply the xml transformations to the input file
-#=================================================
-def transform_ead(xml_as_bytes, handle):
-
-    # in order to parse string as XML, create file-like object and parse it
-    file_like_obj = BytesIO(xml_as_bytes)
-    tree = ET.parse(file_like_obj)
-    root = tree.getroot()
-
-    # add missing elements
-    root = add_missing_box_containers(root)
-    root = add_missing_extents(root)
-    root = insert_handle(root, handle)
-    root = add_title_to_dao(root)
-    
-    # fix errors and rearrange
-    root = fix_box_number_discrepancies(root)
-    root = move_scopecontent(root)
-
-    # remove duplicate, empty, and unneeded elements
-    root = remove_multiple_abstracts(root)
-    root = remove_empty_elements(root)
-    root = remove_opening_of_title(root)
-    
-    return tree
-    
-    
-
-    #===========================
-    # fix incorrect box numbers
-    #===========================
-    def fix_box_number_discrepancies(root):
-        boxes = [c for c in root.iter('container') if c.get('type') == 'box']
-        for box in boxes:
-            match = re.search(r'^(box)?(\d+).\d+$', box.get('id'))
-            if box.text != match.group(2):
-                box.text = match.group(2)
-                logging.info('Corrected box {0} to {1}'.format(
-                    ET.tostring(box), match.group(2)))
-        return root
+    #=================================================
+    # Add handle uri as an attribute of the eadid elem
+    #=================================================
+    def insert_handle(self):
+        eadid = self.tree.find('.//eadid')
+        if eadid is not None:
+            eadid.set('url', self.handle)
+            self.logger.info('Added handle to eadid element')
 
 
     #=================================
     # Add box containers where absent
     #=================================
-    def add_missing_box_containers(root):
+    def add_missing_box_containers(self):
         # iterate over item- and file-level containers
-        for n, did in enumerate(root.iter('did')):
+        for n, did in enumerate(self.root.iter('did')):
             parent = did.getparent()
             parent_level = parent.get('level')
 
@@ -89,41 +61,56 @@ def transform_ead(xml_as_bytes, handle):
                     # create attributes corresponding to the parent box
                     if match:
                         box_number = match.group(2)
-                        box_id = "{0}.{1}".format(match.group(2), match.group(3))
+                        box_id = "{0}.{1}".format(match.group(2),
+                                                  match.group(3)
+                                                  )
                         new_container = ET.SubElement(did, "container")
                         new_container.set('type', 'box')
                         new_container.set('id', box_id)
                         new_container.text = box_number
-                    
-        return root
 
 
     #======================================
     # Missing extents in physdesc elements
     #======================================
-    def add_missing_extents(root):
-        for physdesc in root.findall('physdesc'):
+    def add_missing_extents(self):
+        for physdesc in self.root.findall('physdesc'):
             children = physdesc.getchildren()
             if "extent" not in children:
                 ext = ET.SubElement(physdesc, "extent")
                 ext.text = physdesc.text
                 physdesc.text = ''
-                logging.info('Added missing extent element to {0}'.format(physdesc))
-        return root
+                self.logger.info('Added missing extent element to {0}'.format(
+                                                                    physdesc))
 
 
-
+    #===========================
+    # fix incorrect box numbers
+    #===========================
+    def fix_box_number_discrepancies(self):
+        boxes = [c for c in self.root.iter(
+                    'container') if c.get('type') == 'box'
+                    ]
+                    
+        for box in boxes:
+            match = re.search(r'^(box)?(\d+).\d+$', box.get('id'))
+            if box.text != match.group(2):
+                box.text = match.group(2)
+                self.logger.info('Corrected box {0} to {1}'.format(
+                                ET.tostring(box), match.group(2))
+                                )
 
 
     #==================================================
     # Remove elements containing only empty paragraphs
     #==================================================
-    def remove_empty_elements(root):
+    def remove_empty_elements(self):
         node_types = ['bioghist', 'processinfo', 'scopecontent']
+        
         # check for each of the three elements above
         for node_type in node_types:
             # iterate over instances of the element
-            for node in root.findall(node_type):
+            for node in self.root.findall(node_type):
                 parent = node.getparent()
                 # find all the paragraphs in the node
                 paragraphs = node.findall('p')
@@ -133,63 +120,62 @@ def transform_ead(xml_as_bytes, handle):
                         break
                 # otherwise remove the parent element
                 else:
-                    logging.info(ET.tostring(instance))
+                    self.logger.info()
                     parent.remove(instance)
-        return root
 
 
     #==============================
     # Remove "Guide to" from title
     #==============================
-    def remove_opening_of_title(root):
-        titleproper = root.find('titleproper')
-        # if title.text begins with "Guide to", remove it and capitalize next word
-        if titleproper is not None and titleproper.text is not '':
+    def remove_opening_of_title(self):
+        titleproper = self.tree.find('.//titleproper')
+        
+        # if title.text begins with "Guide to", remove it & capitalize
+        if titleproper is not None and titleproper.text is not None:
             titleproper_old = titleproper.text
 
-            if titleproper_old is not None and titleproper_old.startswith(
-                                                                    "Guide to"):
-
-                titleproper_new = titleproper_old[9].upper() + titleproper_old[10:]
+            if titleproper_old.startswith("Guide to"):
+                titleproper_new = titleproper_old[9].upper() + \
+                    titleproper_old[10:]
+                titleproper.text = titleproper_new
 
                 if len(titleproper_new) > 25:
-                    new_t = titleproper_new[:25] + "..."
-                    old_t = titleproper_old[:25] + "..."
+                    abbrev_new = titleproper_new[:25] + "..."
+                    abbrev_old = titleproper_old[:25] + "..."
                 else:
-                    new_t = titleproper_new
-                    old_t = titleproper_old
-                
-                print("  Altered title: {0} => {1}".format(old_t, new_t))
-
-        return root
+                    abbrev_new = titleproper_new
+                    abbrev_old = titleproper_old
+        
+                self.logger.info(
+                    '{0} -- Removed "Guide to" from title => "{1}"'.format(
+                        self.name, titleproper_new
+                        ))
+                print("  Changed title: {0} => {1}".format(abbrev_old, 
+                                                           abbrev_new
+                                                           ))
 
 
     #======================================================
     # Move scope and content section from analytic cover to 
     #======================================================
-    def move_scopecontent(root):
-        analyticover = root.xpath('//dsc[@type="analyticover"]')
-    
+    def move_scopecontent(self):
+        analyticover = self.root.xpath('//dsc[@type="analyticover"]')
+        
         # iterate over scope and content notes inside analytic cover section
         for ac in analyticover:
             for sc in ac.iter('scopecontent'):
                 paragraphs = [node for node in sc if node.tag is 'p']
-
                 for p in paragraphs:
                     if p.text is not None:
                         break # move the content over
-
             ac.getparent().remove(ac)
-
-        return root
 
 
     #=================================================
     # Remove alternative abstracts used for ArchivesUM
     #=================================================
-    def remove_multiple_abstracts(root):
-        abstracts = [a for a in root.iter('abstract')]
-
+    def remove_multiple_abstracts(self):
+        abstracts = [a for a in self.root.iter('abstract')]
         print("  Found {0} abstracts:".format(len(abstracts)))
 
         if len(abstracts) > 1:
@@ -198,23 +184,14 @@ def transform_ead(xml_as_bytes, handle):
 
                 if label == "Short Description of Collection":
                     print("    {0}. Keeping Short Description".format(
-                                                        abstract_num +1))
+                                                        abstract_num +1)
+                                                        )
                 else:
                     print("    {0}. Removing abstract '{1}'...".format(
-                                                        abstract_num + 1, label))
+                                                        abstract_num + 1,
+                                                        label)
+                                                        )
                     abstract.getparent().remove(abstract)
         else:
             print("  There is only one abstract.")
-        
-        return root
-
-
-    #=================================================
-    # Add handle uri as an attribute of the eadid elem
-    #=================================================
-    def insert_handle(root, handle):
-        eadid = root.find('.//eadid')
-        eadid.set('url', handle)
-        return root
-'''
 
