@@ -13,18 +13,23 @@ class Ead(object):
         self.handle = handle
         self.root = self.tree.getroot()
         self.logger = logging.getLogger("transform.transform")
+        self.logger.info('********** Transforming {0} **********'.format(
+            self.name
+            ).upper()) 
 
 
     #=============================
     # Add title attribute to dao
     #=============================
     def add_title_to_dao(self):
-        for dao in self.tree.findall('dao'):
+        for dao in self.tree.findall('.//dao'):
             parent = dao.getparent()
             unittitle = parent.find('unittitle').text
             if unittitle:
                 dao.set('title', unittitle)
-                self.logger.info('Added title "{0}" to dao'.format(unittitle))
+                self.logger.info(
+                    'Added title "{0}" to dao element'.format(unittitle)
+                    )
             else:
                 self.logger.warn('Cannot find unittitle for dao element')
 
@@ -36,7 +41,9 @@ class Ead(object):
         eadid = self.tree.find('.//eadid')
         if eadid is not None:
             eadid.set('url', self.handle)
-            self.logger.info('Added handle to eadid element')
+            self.logger.info('{0} : Added handle to eadid => "{1}"'.format(
+                        self.name, self.handle
+                        ))
 
 
     #=================================
@@ -44,7 +51,7 @@ class Ead(object):
     #=================================
     def add_missing_box_containers(self):
         # iterate over item- and file-level containers
-        for n, did in enumerate(self.root.iter('did')):
+        for n, did in enumerate(self.tree.iter('did')):
             parent = did.getparent()
             parent_level = parent.get('level')
 
@@ -53,42 +60,48 @@ class Ead(object):
                 for c in did.iterchildren(tag='container'):
                     if c.get('type') == 'box':
                         break
-                # if not, create a box container
-                else:
-                    box_attribute = c.get('parent')
-                    match = re.search(r'^(box)?(\d+).(\d+)$', box_attribute)
-
-                    # create attributes corresponding to the parent box
-                    if match:
-                        box_number = match.group(2)
-                        box_id = "{0}.{1}".format(match.group(2),
-                                                  match.group(3)
-                                                  )
-                        new_container = ET.SubElement(did, "container")
-                        new_container.set('type', 'box')
-                        new_container.set('id', box_id)
-                        new_container.text = box_number
+                    # if not, create a box container
+                    else:
+                        box_attribute = c.get('parent') or ''
+                        match = re.search(r'^(box)?(\d+).(\d+)$', box_attribute)
+                        
+                        # create attributes corresponding to the parent box
+                        if match:
+                            box_number = match.group(2)
+                            box_id = "{0}.{1}".format(match.group(2),
+                                                      match.group(3)
+                                                      )
+                            new_container = ET.SubElement(did, "container")
+                            new_container.set('type', 'box')
+                            new_container.set('id', box_id)
+                            new_container.text = box_number
+                            self.logger.info(
+                                '{0} : Added box {1} to did "{2}"'.format(
+                                    self.name, box_id, box_attribute
+                                    ))
 
 
     #======================================
     # Missing extents in physdesc elements
     #======================================
     def add_missing_extents(self):
-        for physdesc in self.root.findall('physdesc'):
+        for physdesc in self.tree.findall('.//physdesc'):
             children = physdesc.getchildren()
-            if "extent" not in children:
+            if not children:
                 ext = ET.SubElement(physdesc, "extent")
                 ext.text = physdesc.text
                 physdesc.text = ''
-                self.logger.info('Added missing extent element to {0}'.format(
-                                                                    physdesc))
+                self.logger.info(
+                    '{0} : Added missing extent element to {1}'.format(
+                        self.name, physdesc
+                        ))
 
 
     #===========================
     # fix incorrect box numbers
     #===========================
     def fix_box_number_discrepancies(self):
-        boxes = [c for c in self.root.iter(
+        boxes = [c for c in self.tree.iter(
                     'container') if c.get('type') == 'box'
                     ]
                     
@@ -96,9 +109,10 @@ class Ead(object):
             match = re.search(r'^(box)?(\d+).\d+$', box.get('id'))
             if box.text != match.group(2):
                 box.text = match.group(2)
-                self.logger.info('Corrected box {0} to {1}'.format(
-                                ET.tostring(box), match.group(2))
-                                )
+                self.logger.info(
+                    '{0} : Corrected box {1} to {2}'.format(
+                        self.name, ET.tostring(box), match.group(2)
+                        ))
 
 
     #==================================================
@@ -110,7 +124,7 @@ class Ead(object):
         # check for each of the three elements above
         for node_type in node_types:
             # iterate over instances of the element
-            for node in self.root.findall(node_type):
+            for node in self.tree.findall('.//' + node_type):
                 parent = node.getparent()
                 # find all the paragraphs in the node
                 paragraphs = node.findall('p')
@@ -119,9 +133,11 @@ class Ead(object):
                     if len(p) > 0 or p.text is not None:
                         break
                 # otherwise remove the parent element
-                else:
-                    self.logger.info()
-                    parent.remove(instance)
+                parent.remove(node)
+                self.logger.info(
+                    "{0} : Removed empty element {1}".format(
+                        self.name, node_type
+                        ))
 
 
     #==============================
@@ -147,7 +163,7 @@ class Ead(object):
                     abbrev_old = titleproper_old
         
                 self.logger.info(
-                    '{0} -- Removed "Guide to" from title => "{1}"'.format(
+                    '{0} : Removed "Guide to" from title => "{1}"'.format(
                         self.name, titleproper_new
                         ))
                 print("  Changed title: {0} => {1}".format(abbrev_old, 
@@ -159,16 +175,22 @@ class Ead(object):
     # Move scope and content section from analytic cover to 
     #======================================================
     def move_scopecontent(self):
-        analyticover = self.root.xpath('//dsc[@type="analyticover"]')
-        
+        scope = self.tree.findall(
+            'dsc[@type="analyticover"]/scopecontent'
+            )
+        print(scope)
         # iterate over scope and content notes inside analytic cover section
-        for ac in analyticover:
-            for sc in ac.iter('scopecontent'):
+        if scope:
+            for sc in scope:
+                print(sc)
                 paragraphs = [node for node in sc if node.tag is 'p']
-                for p in paragraphs:
-                    if p.text is not None:
-                        break # move the content over
-            ac.getparent().remove(ac)
+                if not all([p.text is None for p in paragraphs]):
+                    # move the content over
+                    parent = scope.getparent()
+                    indepth = parent.find('dsc[@type="in-depth"]')
+                    indepth.text = ac.text
+                # otherwise, and finally, remove (all para. are empty)
+                ac.getparent().remove(ac)
 
 
     #=================================================
@@ -181,17 +203,17 @@ class Ead(object):
         if len(abstracts) > 1:
             for abstract_num, abstract in enumerate(abstracts):
                 label = abstract.get('label')
-
                 if label == "Short Description of Collection":
                     print("    {0}. Keeping Short Description".format(
                                                         abstract_num +1)
                                                         )
                 else:
                     print("    {0}. Removing abstract '{1}'...".format(
-                                                        abstract_num + 1,
-                                                        label)
-                                                        )
+                        abstract_num + 1, label)
+                        )
                     abstract.getparent().remove(abstract)
+                    self.logger.info(
+                        "{0} : removing additional abstracts".format(self.name))
         else:
             print("  There is only one abstract.")
 
