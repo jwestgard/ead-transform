@@ -170,9 +170,8 @@ class Ead(object):
                                                            abbrev_new
                                                            ))
 
-'''
-    This method is in progress; should move each scope and content note to 
-    the corresponding position in the in-depth section.
+    ''' This method is in progress; should move each scope and content note to 
+        the corresponding position in the in-depth section.
     
     #==============================================================
     # Move scope and content notes from analytic cover to in-depth
@@ -193,8 +192,7 @@ class Ead(object):
                     indepth = parent.find('dsc[@type="in-depth"]')
                     indepth.text = ac.text
                 # otherwise, and finally, remove (all para. are empty)
-                ac.getparent().remove(ac)
-'''
+                ac.getparent().remove(ac) '''
 
     #==================================================
     # Remove alternative abstracts used for ArchivesUM

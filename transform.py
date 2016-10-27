@@ -13,10 +13,10 @@ import re
 import sys
 import xml.parsers.expat as xerr
 
-from ead import Ead as Ead
+from classes.ead import Ead as Ead
 
 encodings = ['ascii', 'utf-8', 'windows-1252', 'latin-1']
-missing_handles = []
+
 
 #========================================
 # Get list of EAD files (input or output)
@@ -82,13 +82,14 @@ def main():
     
     # user greeting
     border = "=" * 19
-    print("\n".join(['', border, "| EAD Transformer |", border]))
-    handles = load_handles('../data/handles.csv')
+    print("\n".join(['', border, "| EAD Transformer |", border, '']))
+    handles = load_handles('data/handles.csv')
+    missing_handles = []
     
     # set up message logging to record actions on files
     logger = logging.basicConfig(
                 format='%(asctime)s %(levelname)s %(message)s',
-                filename='../data/reports/transform.log', 
+                filename='data/reports/transform.log', 
                 filemode='w', 
                 level=logging.INFO
                 )
