@@ -170,10 +170,13 @@ class Ead(object):
                                                            abbrev_new
                                                            ))
 
-
-    #======================================================
-    # Move scope and content section from analytic cover to 
-    #======================================================
+'''
+    This method is in progress; should move each scope and content note to 
+    the corresponding position in the in-depth section.
+    
+    #==============================================================
+    # Move scope and content notes from analytic cover to in-depth
+    #==============================================================
     def move_scopecontent(self):
         scope = self.tree.findall(
             'dsc[@type="analyticover"]/scopecontent'
@@ -191,11 +194,11 @@ class Ead(object):
                     indepth.text = ac.text
                 # otherwise, and finally, remove (all para. are empty)
                 ac.getparent().remove(ac)
+'''
 
-
-    #=================================================
+    #==================================================
     # Remove alternative abstracts used for ArchivesUM
-    #=================================================
+    #==================================================
     def remove_multiple_abstracts(self):
         abstracts = [a for a in self.root.iter('abstract')]
         print("  Found {0} abstracts:".format(len(abstracts)))
