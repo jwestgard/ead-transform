@@ -215,18 +215,19 @@ def main():
             
             # add missing elements
             ead.add_missing_box_containers()
+            ead.sort_containers()
             ead.add_missing_extents()
             ead.insert_handle()
             ead.add_title_to_dao()
-            
-            # fix errors and rearrange
-            ead.fix_box_number_discrepancies()
-            ead.move_scopecontent()
             
             # remove duplicate, empty, and unneeded elements
             ead.remove_multiple_abstracts()
             ead.remove_empty_elements()
             ead.remove_opening_of_title()
+
+            # fix errors and rearrange
+            ead.fix_box_number_discrepancies()
+            ead.move_scopecontent()
 
             # write out result
             ead.tree.write(output_path, 

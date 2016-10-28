@@ -81,6 +81,22 @@ class Ead(object):
                                     ))
 
 
+    #================================
+    # Sort containers hierarchically
+    #================================
+    def sort_containers(self):
+        # iterate over item- and file-level containers
+        for n, did in enumerate(self.tree.iter('did')):
+            last_position = len(list(did))
+            for elem in list(did):
+                if 'parent' in elem.keys():
+                    did.insert(last_position, elem)
+                    self.logger.info(
+                    '{0} : Moving child container to position {1} '.format(
+                        self.name, last_position
+                        ))
+
+
     #======================================
     # Missing extents in physdesc elements
     #======================================
@@ -126,6 +142,8 @@ class Ead(object):
             # iterate over instances of the element
             for node in self.tree.findall('.//' + node_type):
                 parent = node.getparent()
+                if node.text is not None:
+                    break
                 # find all the paragraphs in the node
                 paragraphs = node.findall('p')
                 # if any contain text, break the loop
@@ -181,22 +199,29 @@ class Ead(object):
         if analyticover is not None and indepth is not None:
             # locate all the scope and content elems in the analytic cover
             all_scopes = analyticover.findall('.//scopecontent')
+
             for scope in all_scopes:
                 parent = scope.getparent()
                 id = parent.attrib['id'].rstrip('.a')
+
                 # move the scope and content notes over to corresponding elem
                 path = ".//{0}[@id='{1}']".format(parent.tag, id)
                 destination = indepth.find(path)
+                
                 if destination is not None:
                     destination.insert(0, scope)
+                    self.logger.info(
+                        '{0} : Moved "scopecontent" elem from analytic '
+                        'to in-depth sections'.format(self.name)
+                        )
                 else:
                     print("cannot find destination path")
-                self.logger.info(
-                    '{0} : Moved "scopecontent" elem from analytic '
-                    'to in-depth sections'.format(self.name)
-                    )
+                    
             # delete the analytic cover element
             analyticover.getparent().remove(analyticover)
+            self.logger.info(
+                        '{0} : Deleted analyticover element'.format(self.name)
+                        )
 
 
     #==================================================
