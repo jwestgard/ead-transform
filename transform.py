@@ -221,7 +221,7 @@ def main():
             
             # fix errors and rearrange
             ead.fix_box_number_discrepancies()
-            # IN PROGRESS: ad.move_scopecontent()
+            ead.move_scopecontent()
             
             # remove duplicate, empty, and unneeded elements
             ead.remove_multiple_abstracts()

@@ -170,29 +170,34 @@ class Ead(object):
                                                            abbrev_new
                                                            ))
 
-    ''' This method is in progress; should move each scope and content note to 
-        the corresponding position in the in-depth section.
-    
+
     #==============================================================
     # Move scope and content notes from analytic cover to in-depth
     #==============================================================
     def move_scopecontent(self):
-        scope = self.tree.findall(
-            'dsc[@type="analyticover"]/scopecontent'
-            )
-        print(scope)
-        # iterate over scope and content notes inside analytic cover section
-        if scope:
-            for sc in scope:
-                print(sc)
-                paragraphs = [node for node in sc if node.tag is 'p']
-                if not all([p.text is None for p in paragraphs]):
-                    # move the content over
-                    parent = scope.getparent()
-                    indepth = parent.find('dsc[@type="in-depth"]')
-                    indepth.text = ac.text
-                # otherwise, and finally, remove (all para. are empty)
-                ac.getparent().remove(ac) '''
+        analyticover = self.tree.find('.//dsc[@type="analyticover"]')
+        indepth = self.tree.find('.//dsc[@type="in-depth"]')
+        
+        if analyticover is not None and indepth is not None:
+            # locate all the scope and content elems in the analytic cover
+            all_scopes = analyticover.findall('.//scopecontent')
+            for scope in all_scopes:
+                parent = scope.getparent()
+                id = parent.attrib['id'].rstrip('.a')
+                # move the scope and content notes over to corresponding elem
+                path = ".//{0}[@id='{1}']".format(parent.tag, id)
+                destination = indepth.find(path)
+                if destination is not None:
+                    destination.insert(0, scope)
+                else:
+                    print("cannot find destination path")
+                self.logger.info(
+                    '{0} : Moved "scopecontent" elem from analytic '
+                    'to in-depth sections'.format(self.name)
+                    )
+            # delete the analytic cover element
+            analyticover.getparent().remove(analyticover)
+
 
     #==================================================
     # Remove alternative abstracts used for ArchivesUM
