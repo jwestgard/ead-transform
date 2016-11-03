@@ -217,6 +217,7 @@ def main():
             ead.add_missing_box_containers()
             ead.sort_containers()
             ead.add_missing_extents()
+            ead.correct_text_in_extents()
             ead.insert_handle()
             ead.add_title_to_dao()
             

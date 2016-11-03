@@ -113,6 +113,28 @@ class Ead(object):
                         ))
 
 
+    #======================================
+    # Clean up and standardize extent text
+    #======================================
+    def correct_text_in_extents(self):
+        for extent in self.tree.findall('.//extent'):
+            words = extent.text.split()
+            for word in words:
+                word = word.rstrip()
+                if word == 'Linear' or word == 'lin':
+                    word = 'linear'
+                elif word == 'ft':
+                    word = 'feet'
+            result = ' '.join(words)
+            if result != extent.text:
+                print('Changed {0} to {1}'.format(extent.text, result))
+                self.logger.info(
+                    '{0} : Corrected extent from {0} to {1}'.format(
+                        extent.text, result
+                        ))
+                extent.text = result
+
+
     #===========================
     # fix incorrect box numbers
     #===========================
