@@ -102,7 +102,6 @@ class Ead(object):
     #======================================
     def add_missing_extents(self):
         for physdesc in self.tree.findall('./archdesc/did/physdesc'):
-            print(physdesc)
             children = physdesc.getchildren()
             if not children:
                 ext = ET.SubElement(physdesc, "extent")
