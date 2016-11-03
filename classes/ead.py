@@ -101,7 +101,18 @@ class Ead(object):
     # Missing extents in physdesc elements
     #======================================
     def add_missing_extents(self):
-        for physdesc in self.tree.findall('.//physdesc'):
+        for physdesc in self.tree.findall('./archdesc/did/physdesc'):
+            print(physdesc)
+            children = physdesc.getchildren()
+            if not children:
+                ext = ET.SubElement(physdesc, "extent")
+                ext.text = physdesc.text
+                physdesc.text = ''
+                self.logger.info(
+                    '{0} : Added missing extent element to {1}'.format(
+                        self.name, physdesc
+                        ))
+        for physdesc in self.tree.findall('./archdesc/dsc/c01/physdesc'):
             children = physdesc.getchildren()
             if not children:
                 ext = ET.SubElement(physdesc, "extent")
@@ -118,7 +129,7 @@ class Ead(object):
     #======================================
     def correct_text_in_extents(self):
         for extent in self.tree.findall('.//extent'):
-            words = extent.text.split()
+            words = [w for w in extent.text.split() if w != 'approximately']
             for word in words:
                 word = word.rstrip()
                 if word == 'Linear' or word == 'lin':
