@@ -1,6 +1,7 @@
 import logging
 import lxml.etree as ET
 import re
+import string
 
 class Ead(object):
 
@@ -108,14 +109,12 @@ class Ead(object):
     def sort_containers(self):
         # iterate over item- and file-level containers
         for n, did in enumerate(self.tree.iter('did')):
-            last_position = len(list(did))
             for elem in list(did):
                 if 'parent' in elem.keys():
-                    did.remove(elem)
-                    did.insert(last_position, elem)
+                    did.append(elem)
                     self.logger.info(
-                    '{0} : Moving child container to position {1} '.format(
-                        self.name, last_position
+                    '{0} : Moving child container to last position'.format(
+                        self.name
                         ))
 
 
@@ -142,13 +141,22 @@ class Ead(object):
     #======================================
     def correct_text_in_extents(self):
         for extent in self.tree.findall('.//extent'):
+            # split text into words and filter word approximately
             words = [w for w in extent.text.split() if w != 'approximately']
+            numeric_chars = set('0123456789,')
             for word in words:
+                # remove line breaks and trailing spaces
+                word = word.replace("\n", "")
                 word = word.rstrip()
+                # check word is digits/commas only and remove comma unless last
+                if all([(c in numeric_chars) for c in word]):
+                    word = word[:-1].replace(",", "") + word[-1:]
+                # change linear and feet into standard forms
                 if word == 'Linear' or word == 'lin':
                     word = 'linear'
                 elif word == 'ft':
                     word = 'feet'
+            # re-join the words
             result = ' '.join(words)
             if result != extent.text:
                 print('Changed {0} to {1}'.format(extent.text, result))
