@@ -192,7 +192,7 @@ class Ead(object):
                         self.name, current_id, new_id
                         ))
             # make the text of element match the id attribute        
-            match = re.search(r'^(box)?(\d+).\d+$', box.get('id'))
+            match = re.search(r'^(box)?(\d+).(\d+)$', box.get('id'))
             current_text = box.text
             new_text = match.group(3)
             if current_text != new_text:
