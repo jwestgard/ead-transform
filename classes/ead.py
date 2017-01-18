@@ -144,22 +144,27 @@ class Ead(object):
             # split text into words and filter word approximately
             words = [w for w in extent.text.split() if w != 'approximately']
             numeric_chars = set('0123456789,')
-            for word in words:
-                # remove line breaks and trailing spaces
-                word = word.replace("\n", "")
-                word = word.rstrip()
-                # check word is digits/commas only and remove comma unless last
-                if all([(c in numeric_chars) for c in word]):
-                    word = word[:-1].replace(",", "") + word[-1:]
+            result_words = []
+            for n, word in enumerate(words):
                 # change linear and feet into standard forms
                 if word == 'Linear' or word == 'lin':
-                    word = 'linear'
-                elif word == 'ft':
-                    word = 'feet'
+                    result_word = 'linear'
+                elif word == 'ft' or word == 'Feet':
+                    result_word = 'feet'
+                elif word == 'Foot':
+                    result_word = 'foot'
+                else:
+                    # remove line breaks and trailing spaces
+                    result_word = word.replace("\n", "").strip().rstrip(".")
+                # check word is digits/commas only and remove comma unless last
+                if all([(c in numeric_chars) for c in result_word]):
+                    result_word = word[:-1].replace(",", "") + word[-1:]
+                result_words.append(result_word)
             # re-join the words
-            result = ' '.join(words)
+            result = ' '.join(result_words)
+            
             if result != extent.text:
-                print('Changed {0} to {1}'.format(extent.text, result))
+                print('Changed extent {0} to {1}'.format(extent.text, result))
                 self.logger.info(
                     '{0} : Corrected extent from {0} to {1}'.format(
                         extent.text, result
@@ -189,7 +194,7 @@ class Ead(object):
             # make the text of element match the id attribute        
             match = re.search(r'^(box)?(\d+).\d+$', box.get('id'))
             current_text = box.text
-            new_text = match.group(2)
+            new_text = match.group(3)
             if current_text != new_text:
                 box.text = new_text
                 self.logger.info(
