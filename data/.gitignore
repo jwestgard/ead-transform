@@ -1,7 +1,6 @@
 *
 !.gitignore
+!handles.csv
 !input/.gitignore
 !output/.gitignore
-!logs/.gitignore
-!test/.gitignore
 !reports/.gitignore
